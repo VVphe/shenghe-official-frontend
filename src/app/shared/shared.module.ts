@@ -1,8 +1,13 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { NzIconModule } from "ng-zorro-antd";
+import { NzIconModule, NzDropDownModule, NzInputModule } from "ng-zorro-antd";
 
-const SHARED_MODULES = [CommonModule, NzIconModule];
+const SHARED_MODULES = [
+  CommonModule,
+  NzIconModule,
+  NzDropDownModule,
+  NzInputModule
+];
 
 @NgModule({
   declarations: [],

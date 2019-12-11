@@ -1,5 +1,5 @@
 <div class="footer flex-center">
-  <a *ngFor="let menu of menus">{{ menu.label }}</a>
+  <a *ngFor="let menu of menus" [routerLink]="[menu.link]">{{ menu.label }}</a>
   <div class="contact-group">
     <i nz-icon nzType="facebook" nzTheme="outline"></i>
     <i nz-icon nzType="instagram" nzTheme="outline"></i>
