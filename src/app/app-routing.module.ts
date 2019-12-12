@@ -26,6 +26,13 @@ const routes: Routes = [
           import("./product/product.module").then(
             module => module.ProductModule
           )
+      },
+      {
+        path: "about",
+        loadChildren: () =>
+          import("./aboutus/aboutus.module").then(
+            module => module.AboutusModule
+          )
       }
     ]
   }

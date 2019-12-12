@@ -14,6 +14,7 @@ import { HomeModule } from "./home/home.module";
 import { ContactModule } from "./contact/contact.module";
 import { ProductModule } from "./product/product.module";
 import { DefaultInjectorService } from "./core/default-injector.service";
+import { AboutusModule } from "./aboutus/aboutus.module";
 
 registerLocaleData(zh);
 
@@ -29,7 +30,8 @@ registerLocaleData(zh);
     BrowserAnimationsModule,
     HomeModule,
     ContactModule,
-    ProductModule
+    ProductModule,
+    AboutusModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: zh_CN },
