@@ -1,0 +1,95 @@
+::ng-deep {
+  .slider-wrapper {
+    .ant-slider {
+      margin: 0 0 8px;
+    }
+
+    .ant-slider-track {
+      height: 8px;
+      background-color: #5b7b33;
+    }
+    .ant-slider-rail {
+      height: 8px;
+    }
+
+    .ant-slider:hover .ant-slider-track {
+      background-color: #5b7b33;
+    }
+
+    .ant-slider:hover .ant-slider-rail {
+      background-color: rgba(91, 123, 51, 0.1);
+    }
+
+    .ant-slider-rail {
+      background-color: rgba(91, 123, 51, 0.1);
+      &:before {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        top: -2px;
+        left: -7px;
+        background-color: #eef1ea;
+        border-radius: 50%;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        top: -2px;
+        right: -7px;
+        background-color: #eef1ea;
+        border-radius: 50%;
+      }
+    }
+
+    .ant-slider-handle {
+      margin-top: -2px;
+      margin-left: -6px;
+      border: none;
+      background-color: #5b7b33;
+      width: 12px;
+      height: 12px;
+    }
+
+    .mark {
+      display: flex;
+      justify-content: space-between;
+      > span {
+        display: inline-block;
+        width: 1px;
+        height: 4px;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.24);
+        &.longer {
+          height: 8px;
+        }
+      }
+    }
+
+    .mark-number {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      > span {
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.24);
+        position: absolute;
+        &.start {
+          left: 0;
+          transform: translateX(-50%);
+        }
+        &.median {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        &.end {
+          right: 0;
+          transform: translateX(50%);
+        }
+      }
+    }
+  }
+}

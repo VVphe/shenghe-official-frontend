@@ -14,6 +14,8 @@ export class ProductComponent implements OnInit {
 
   currentLang = "English";
 
+  initSelected = "all";
+
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
@@ -52,12 +54,30 @@ export class ProductComponent implements OnInit {
         id: categorys[i].id,
         name: categorys[i].name[lang],
         isLeaf: !categorys[i].children || !categorys[i].children.length,
-        count: categorys[i].count,
+        count:
+          categorys[i].children && categorys[i].children.length
+            ? this.calcCount(categorys[i].children)
+            : categorys[i].count,
         parent: categorys[i].parent || null,
         expanded: true,
         children: this.formatCategory(categorys[i].children || [])
       });
     }
     return result;
+  }
+
+  calcCount(nodes: any[]): number {
+    let result = 0;
+    for (let i = 0; i < nodes.length; i++) {
+      result +=
+        nodes[i].children && nodes[i].children.length
+          ? this.calcCount(nodes[i].children)
+          : nodes[i].count;
+    }
+    return result;
+  }
+
+  handleSelectChange(value: { id: string; type: "all" | "group" | "leaf" }) {
+    console.log(value);
   }
 }

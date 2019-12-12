@@ -1,4 +1,11 @@
-import { Component, OnInit, Input } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  AfterViewInit,
+  Output,
+  EventEmitter
+} from "@angular/core";
 import { category } from "./category";
 
 @Component({
@@ -10,10 +17,30 @@ export class CategoryTreeComponent implements OnInit {
   @Input()
   categorys: category[] = [];
 
+  @Output()
+  selectChange = new EventEmitter<any>();
+
   @Input()
-  allCount: number = 0;
+  selectedKey: string = "all";
+
+  get allCount() {
+    if (!this.categorys) return;
+    let count = 0;
+    for (let i = 0; i < this.categorys.length; i++) {
+      count += this.categorys[i].count;
+    }
+    return count;
+  }
 
   constructor() {}
 
   ngOnInit() {}
+
+  select(id: string, type: "all" | "group" | "leaf") {
+    this.selectedKey = id;
+    this.selectChange.emit({
+      id,
+      type
+    });
+  }
 }
