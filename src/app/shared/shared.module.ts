@@ -1,12 +1,14 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { NzIconModule, NzDropDownModule, NzInputModule } from "ng-zorro-antd";
+import { HttpClientModule } from "@angular/common/http";
 
 const SHARED_MODULES = [
   CommonModule,
   NzIconModule,
   NzDropDownModule,
-  NzInputModule
+  NzInputModule,
+  HttpClientModule
 ];
 
 @NgModule({

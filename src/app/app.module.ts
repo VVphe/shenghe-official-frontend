@@ -6,12 +6,14 @@ import { AppComponent } from "./app.component";
 import { LayoutModule } from "./layout/layout.module";
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from "ng-zorro-antd";
 import { FormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { registerLocaleData } from "@angular/common";
 import zh from "@angular/common/locales/zh";
 import { HomeModule } from "./home/home.module";
 import { ContactModule } from "./contact/contact.module";
+import { ProductModule } from "./product/product.module";
+import { DefaultInjectorService } from "./core/default-injector.service";
 
 registerLocaleData(zh);
 
@@ -26,9 +28,17 @@ registerLocaleData(zh);
     HttpClientModule,
     BrowserAnimationsModule,
     HomeModule,
-    ContactModule
+    ContactModule,
+    ProductModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
+  providers: [
+    { provide: NZ_I18N, useValue: zh_CN },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: DefaultInjectorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,0 +1,20 @@
+<div class="category-wrapper">
+  <a class="all">All ({{ allCount }})</a>
+  <ng-container *ngFor="let category of categorys">
+    <span class="group">
+      <a>{{ category.name }} ({{ category.count }})</a>
+      <i nz-icon nzType="down" nzTheme="outline" *ngIf="category.expanded"></i>
+      <i
+        nz-icon
+        nzType="right"
+        nzTheme="outline"
+        *ngIf="!category.expanded"
+      ></i>
+    </span>
+    <ng-container *ngIf="category.children && category.children.length">
+      <span class="leaf" *ngFor="let subCategory of category.children">
+        <a>{{ subCategory.name }} ({{ subCategory.count }})</a>
+      </span>
+    </ng-container>
+  </ng-container>
+</div>
