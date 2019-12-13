@@ -1,0 +1,18 @@
+<div class="filter-wrapper">
+  <div class="param-slider">
+    <p>Power</p>
+    <app-slider
+      [min]="0"
+      [max]="300"
+      (valueChange)="handleValueChange($event, 'power')"
+    ></app-slider>
+  </div>
+  <div class="param-slider">
+    <p>Luminous flux</p>
+    <app-slider
+      [min]="0"
+      [max]="250"
+      (valueChange)="handleValueChange($event, 'flux')"
+    ></app-slider>
+  </div>
+</div>

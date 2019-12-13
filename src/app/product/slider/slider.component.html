@@ -1,5 +1,13 @@
 <div class="slider-wrapper">
-  <nz-slider nzRange [(ngModel)]="value"></nz-slider>
+  <nz-slider
+    [nzMin]="min"
+    [nzMax]="max"
+    nzRange
+    [(ngModel)]="value"
+    nzTooltipVisible="always"
+    nzTooltipPlacement="top"
+    (ngModelChange)="handleValueChange($event)"
+  ></nz-slider>
   <div class="mark">
     <span
       *ngFor="let division of divisionArr; let i = index"
