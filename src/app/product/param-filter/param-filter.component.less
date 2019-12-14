@@ -1,0 +1,31 @@
+::ng-deep {
+  .filter-wrapper {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    .param-slider {
+      padding: 10px 16px 28px 16px;
+      > p {
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.87);
+        margin: 0 0 42px 0;
+      }
+      &:first-child {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .ant-tooltip {
+    font-size: 12px;
+    .ant-tooltip-inner {
+      min-width: 16px;
+      min-height: 16px;
+      padding: 2px;
+      background-color: #5b7b33;
+    }
+    .ant-tooltip-arrow::before {
+      background-color: #5b7b33;
+    }
+  }
+}

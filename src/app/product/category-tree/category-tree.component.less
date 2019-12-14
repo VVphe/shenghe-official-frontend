@@ -1,4 +1,13 @@
 ::ng-deep {
+  @keyframes slide-up {
+    0% {
+      height: auto;
+    }
+    100% {
+      height: 0;
+    }
+  }
+
   .category-wrapper {
     display: flex;
     flex-direction: column;
@@ -20,10 +29,17 @@
       }
     }
 
+    > div:not(:last-child) {
+      span:last-child {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+
     a {
       font-size: 14px;
       font-weight: 400;
       color: rgba(0, 0, 0, 0.87);
+      user-select: none;
     }
 
     .group {
@@ -32,7 +48,30 @@
       align-items: center;
       > i {
         font-size: 10px;
+        &.toggle-expand {
+          cursor: pointer;
+        }
+      }
+      a {
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.87);
+      }
+      & + div {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 1000px;
+        transition: max-height 0.2s ease-out;
+        &.hide {
+          max-height: 0;
+          display: none;
+        }
       }
     }
+  }
+
+  a.selected,
+  .selected > a {
+    color: #5b7b33 !important;
   }
 }

@@ -1,0 +1,22 @@
+<div class="slider-wrapper">
+  <nz-slider
+    [nzMin]="min"
+    [nzMax]="max"
+    nzRange
+    [(ngModel)]="value"
+    nzTooltipVisible="always"
+    nzTooltipPlacement="top"
+    (ngModelChange)="handleValueChange($event)"
+  ></nz-slider>
+  <div class="mark">
+    <span
+      *ngFor="let division of divisionArr; let i = index"
+      [ngClass]="{ longer: i % 5 === 0 }"
+    ></span>
+  </div>
+  <div class="mark-number">
+    <span class="start">{{ min }}</span>
+    <span class="median">{{ median(min, max) }}</span>
+    <span class="end">{{ max }}</span>
+  </div>
+</div>
