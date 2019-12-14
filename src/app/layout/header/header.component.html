@@ -9,14 +9,21 @@
   </div>
   <div class="menu-wrapper">
     <div *ngIf="!showSearch">
-      <a
-        class="menu"
-        *ngFor="let menu of menus"
-        [routerLink]="[menu.link]"
-        routerLinkActive="router-link-active"
-        >{{ menu.label }}</a
-      >
+      <ng-container *ngFor="let menu of menus">
+        <a
+          class="menu {{ menu.label }}"
+          [routerLink]="[menu.link]"
+          routerLinkActive="router-link-active"
+          >{{ menu.label }}</a
+        >
+        <div class="hover-extend" *ngIf="menu.label == 'Products'">
+          <div class="hover-product">
+            <p>Outdoor</p>
+          </div>
+        </div>
+      </ng-container>
     </div>
+
     <div class="search-wrapper">
       <i
         class="search"

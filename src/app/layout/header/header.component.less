@@ -22,9 +22,15 @@
     justify-content: flex-end;
     flex: 1;
     align-items: center;
+    height: 100%;
     > div {
+      height: 100%;
       display: flex;
       align-items: center;
+      > a {
+        height: 100%;
+        line-height: 60px;
+      }
     }
   }
   .menu {
@@ -82,4 +88,20 @@
     font-weight: 500;
     color: rgba(0, 0, 0, 0.87);
   }
+}
+
+.hover-extend {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 1001;
+  width: 100%;
+  &:hover {
+    display: block;
+  }
+}
+
+.menu.Products:hover + .hover-extend {
+  display: block;
 }
