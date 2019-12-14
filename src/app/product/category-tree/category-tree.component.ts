@@ -28,6 +28,8 @@ export class CategoryTreeComponent implements OnInit {
   @Input()
   total = 0;
 
+  categoryType: "all" | "group" | "leaf" = "all";
+
   // get allCount() {
   //   if (!this.categorys) return;
   //   let count = 0;
@@ -43,6 +45,7 @@ export class CategoryTreeComponent implements OnInit {
 
   select(id: string, type: "all" | "group" | "leaf") {
     this.selectedKey = id;
+    this.categoryType = type;
     this.selectChange.emit({
       id,
       type

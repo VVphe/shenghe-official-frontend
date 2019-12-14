@@ -19,6 +19,7 @@
     <div class="setting">
       <div class="category">
         <app-category-tree
+          #categoryTree
           [categorys]="categorys"
           (selectChange)="handleSelectChange($event)"
           [selectedKey]="initSelected"
@@ -26,13 +27,13 @@
           [count]="count"
         ></app-category-tree>
       </div>
-      <div class="filter">
+      <div class="filter" *ngIf="categorys && categorys.length">
         <app-param-filter
-          *ngIf="categorys && categorys.length"
+          (valueChange)="handleFilterChange($event)"
         ></app-param-filter>
       </div>
     </div>
-    <div class="list-pagination">
+    <div class="list-pagination" [hidden]="!showAfterQuery">
       <div class="list">
         <div *ngFor="let product of productList">
           <div class="box">
@@ -69,6 +70,7 @@
         [nzPageIndex]="pageIndex"
         [nzTotal]="pageTotal"
         [nzPageSize]="pageSize"
+        (nzPageIndexChange)="handlePageChange($event)"
       ></nz-pagination>
     </div>
   </div>

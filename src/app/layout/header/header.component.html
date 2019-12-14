@@ -23,12 +23,13 @@
         nz-icon
         nzType="search"
         nzTheme="outline"
-        (click)="showSearch = !showSearch"
+        (click)="toggleSearch()"
       ></i>
       <input
         class="search-input {{ showSearch ? 'show-search' : '' }}"
         nz-input
         [(ngModel)]="searchValue"
+        (keyup)="handleSearch($event)"
       />
     </div>
     <img

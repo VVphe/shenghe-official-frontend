@@ -13,7 +13,7 @@ export class ParamFilterComponent implements OnInit {
 
   ngOnInit() {}
 
-  handleValueChange(value: number[], type: "Power" | "Luminous flux") {
+  handleValueChange(value: number[], type: string) {
     console.log(value, type);
     this.valueChange.emit({ value, type });
   }
