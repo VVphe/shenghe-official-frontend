@@ -4,7 +4,9 @@ import {
   NzIconModule,
   NzDropDownModule,
   NzInputModule,
-  NzSliderModule
+  NzSliderModule,
+  NzToolTipModule,
+  NzPaginationModule
 } from "ng-zorro-antd";
 import { HttpClientModule } from "@angular/common/http";
 
@@ -14,7 +16,9 @@ const SHARED_MODULES = [
   NzDropDownModule,
   NzInputModule,
   HttpClientModule,
-  NzSliderModule
+  NzSliderModule,
+  NzToolTipModule,
+  NzPaginationModule
 ];
 
 @NgModule({

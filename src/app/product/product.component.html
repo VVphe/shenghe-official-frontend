@@ -6,4 +6,70 @@
 <!-- <div style="width: 260px;">
   <app-param-filter></app-param-filter>
 </div> -->
-<app-product-info></app-product-info>
+<!-- <div *ngFor="let product of productList" style="width: 100px;">
+  <div class="box">
+    <img src="{{ product.picture }}" />
+  </div>
+  <p class="name">{{ product.name }}</p>
+  <p class="param">{{ product.CCT }}</p>
+  <p class="param">{{ product.Power }}</p>
+</div> -->
+<div class="product-layout">
+  <div class="product-wrapper">
+    <div class="setting">
+      <div class="category">
+        <app-category-tree
+          [categorys]="categorys"
+          (selectChange)="handleSelectChange($event)"
+          [selectedKey]="initSelected"
+          [total]="total"
+          [count]="count"
+        ></app-category-tree>
+      </div>
+      <div class="filter">
+        <app-param-filter
+          *ngIf="categorys && categorys.length"
+        ></app-param-filter>
+      </div>
+    </div>
+    <div class="list-pagination">
+      <div class="list">
+        <div *ngFor="let product of productList">
+          <div class="box">
+            <img src="{{ product.picture }}" />
+          </div>
+          <p
+            class="name"
+            [nzTooltipTitle]="product.name"
+            nzTooltipPlacement="top"
+            nz-tooltip
+          >
+            {{ product.name }}
+          </p>
+          <p
+            class="param"
+            [nzTooltipTitle]="product.CCT"
+            nzTooltipPlacement="top"
+            nz-tooltip
+          >
+            CCT: {{ product.CCT }}
+          </p>
+          <p
+            class="param"
+            [nzTooltipTitle]="product.Power"
+            nzTooltipPlacement="top"
+            nz-tooltip
+          >
+            Power: {{ product.Power }}
+          </p>
+        </div>
+      </div>
+      <nz-pagination
+        class="product-pagination"
+        [nzPageIndex]="pageIndex"
+        [nzTotal]="pageTotal"
+        [nzPageSize]="pageSize"
+      ></nz-pagination>
+    </div>
+  </div>
+</div>

@@ -11,8 +11,8 @@ export class ProductService extends CommonService {
     super();
   }
 
-  getProducts(params = {}) {
-    return this.http.get("/product/list", {
+  getProducts(params = {}): Observable<any> {
+    return this.http.get("/product/official/list", {
       params: this.getHttpParams(params)
     });
   }

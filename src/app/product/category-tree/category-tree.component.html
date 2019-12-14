@@ -2,14 +2,14 @@
   <a
     class="all {{ selectedKey === 'all' ? 'selected' : '' }}"
     (click)="select('all', 'all')"
-    >All ({{ allCount }})</a
+    >All ({{ total }})</a
   >
-  <ng-container *ngFor="let category of categorys">
+  <ng-container *ngFor="let category of categorys; let i = index">
     <span
       class="group {{ selectedKey === category.id ? 'selected' : '' }}"
       (click)="select(category.id, 'group')"
     >
-      <a>{{ category.name }} ({{ category.count }})</a>
+      <a>{{ category.name }} ({{ calcTotalCount(i) || 0 }})</a>
       <i
         class="toggle-expand"
         nz-icon
@@ -28,7 +28,7 @@
         *ngFor="let subCategory of category.children"
         (click)="select(subCategory.id, 'leaf')"
       >
-        <a>{{ subCategory.name }} ({{ subCategory.count }})</a>
+        <a>{{ subCategory.name }} ({{ count[subCategory.id] || 0 }})</a>
       </span>
     </ng-container>
   </ng-container>

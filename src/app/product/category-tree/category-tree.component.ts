@@ -23,14 +23,19 @@ export class CategoryTreeComponent implements OnInit {
   @Input()
   selectedKey: string = "all";
 
-  get allCount() {
-    if (!this.categorys) return;
-    let count = 0;
-    for (let i = 0; i < this.categorys.length; i++) {
-      count += this.categorys[i].count;
-    }
-    return count;
-  }
+  @Input()
+  count = {};
+  @Input()
+  total = 0;
+
+  // get allCount() {
+  //   if (!this.categorys) return;
+  //   let count = 0;
+  //   for (let i = 0; i < this.categorys.length; i++) {
+  //     count += this.categorys[i].count;
+  //   }
+  //   return count;
+  // }
 
   constructor() {}
 
@@ -42,5 +47,18 @@ export class CategoryTreeComponent implements OnInit {
       id,
       type
     });
+  }
+
+  calcTotalCount(index: number) {
+    let result = 0;
+    if (
+      this.categorys[index].children &&
+      this.categorys[index].children.length
+    ) {
+      for (let i = 0; i < this.categorys[index].children.length; i++) {
+        result += this.count[this.categorys[index].children[i].id] || 0;
+      }
+    }
+    return result;
   }
 }
