@@ -7,6 +7,7 @@ import {
   NzSliderModule
 } from "ng-zorro-antd";
 import { HttpClientModule } from "@angular/common/http";
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 
 const SHARED_MODULES = [
   CommonModule,
@@ -14,7 +15,8 @@ const SHARED_MODULES = [
   NzDropDownModule,
   NzInputModule,
   HttpClientModule,
-  NzSliderModule
+  NzSliderModule,
+  NzTabsModule
 ];
 
 @NgModule({
