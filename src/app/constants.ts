@@ -2,7 +2,7 @@ export const LANGUAGES = [
   {
     type: "English",
     icon: "/assets/images/icon-language-english.png",
-    config: "en_GB",
+    config: "en_US",
     lang: "English"
   },
   {
