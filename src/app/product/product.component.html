@@ -14,7 +14,7 @@
   <p class="param">{{ product.CCT }}</p>
   <p class="param">{{ product.Power }}</p>
 </div> -->
-<div class="product-layout">
+<div class="product-layout" [hidden]="!isList">
   <div class="product-wrapper">
     <div class="setting">
       <div class="category">
@@ -35,7 +35,7 @@
     </div>
     <div class="list-pagination" [hidden]="!showAfterQuery">
       <div class="list">
-        <div *ngFor="let product of productList" (click)="toDetal(product.id)">
+        <div *ngFor="let product of productList" (click)="toDetail(product.id)">
           <div class="box">
             <img src="{{ product.picture }}" />
           </div>
@@ -75,3 +75,4 @@
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>

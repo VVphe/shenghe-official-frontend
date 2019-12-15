@@ -1,22 +1,59 @@
-<div class="params-list">
-  <div
-    *ngFor="let paramName of keysOf(PARAMS)"
-    [ngStyle]="{
-      height: 24 * PARAMS[paramName].count + 'px'
-    }"
-  >
-    <div class="name">
-      {{ paramName }}
+<div class="detail-header">
+  <span (click)="back()">
+    <i nz-icon nzType="left" nzTheme="outline"></i>return
+  </span>
+</div>
+<div class="detail-wrapper">
+  <div class="left">
+    <div class="product-pic">
+      <p>{{ productInfo.name[langType] }}</p>
+      <img src="{{ productInfo.pictures.product }}" />
     </div>
-    <div class="inputs" *ngIf="productInfo.params[langType]">
-      <span
-        *ngFor="
-          let item of productInfo.params[langType][paramName];
-          let i = index;
-          trackBy: identifyFun
-        "
-        >{{ productInfo.params[langType][paramName][i] }}</span
-      >
+    <div class="product-params">
+      <p class="sub-header">Specifications</p>
+      <div class="params-list">
+        <div
+          *ngFor="let paramName of keysOf(PARAMS)"
+          [ngStyle]="{
+            height: 31 * PARAMS[paramName].count + 'px'
+          }"
+        >
+          <div class="name">
+            {{ paramName }}
+          </div>
+          <div class="inputs" *ngIf="productInfo.params[langType]">
+            <span
+              *ngFor="
+                let item of productInfo.params[langType][paramName];
+                let i = index;
+                trackBy: identifyFun
+              "
+              >{{ productInfo.params[langType][paramName][i] }}</span
+            >
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="right">
+    <div class="dimensions">
+      <p class="sub-header">Dimensions</p>
+      <div>
+        <img src="{{ productInfo.pictures.dimensions }}" />
+      </div>
+    </div>
+    <div class="photometric">
+      <p class="sub-header">Photometric data</p>
+      <div>
+        <img src="{{ productInfo.pictures.photometric1 }}" />
+        <img src="{{ productInfo.pictures.photometric2 }}" />
+      </div>
+    </div>
+    <div class="brand">
+      <img src="{{ productInfo.pictures.brand }}" />
+    </div>
+  </div>
+</div>
+<div class="real-shooting">
+  <img src="{{ productInfo.pictures.realShooting }}" />
 </div>

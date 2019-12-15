@@ -37,6 +37,10 @@ export class ProductComponent implements OnInit {
   @ViewChild("categoryTree", { static: false })
   categoryTree: CategoryTreeComponent;
 
+  get isList() {
+    return this.router.url.split("?")[0] === "/products";
+  }
+
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
@@ -62,10 +66,11 @@ export class ProductComponent implements OnInit {
         }
       });
     });
+    console.log(this.router.url);
   }
 
   getProductList(totalReset = false, countReset = false) {
-    this.showAfterQuery = false;
+    // this.showAfterQuery = false;
     return new Promise(resolve => {
       const params = {
         language: this.lang,
@@ -100,7 +105,7 @@ export class ProductComponent implements OnInit {
           });
         }
         resolve();
-        this.showAfterQuery = true;
+        // this.showAfterQuery = true;
       });
     });
   }
@@ -187,9 +192,23 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  toDetal(id: string) {
-    this.router.navigate(["/products/detail"], {
-      queryParams: { id }
-    });
+  toDetail(id: string) {
+    this.router
+      .navigate(["/products/detail"], {
+        queryParams: { id }
+      })
+      .then(() => {
+        if (document.getElementsByClassName("ant-tooltip")) {
+          console.log(document.getElementsByClassName("ant-tooltip"));
+          for (
+            let i = 0;
+            i < document.getElementsByClassName("ant-tooltip").length;
+            i++
+          ) {
+            const el = document.getElementsByClassName("ant-tooltip")[i];
+            el.classList.add("hide");
+          }
+        }
+      });
   }
 }

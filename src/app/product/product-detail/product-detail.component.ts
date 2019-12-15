@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { ProductService } from "../product.service";
 import { LANGUAGES } from "../../constants";
 import { productParams } from "../constants";
+import { Location } from "@angular/common";
 
 @Component({
   selector: "app-product-detail",
@@ -24,7 +25,9 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private location: Location,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -47,10 +50,10 @@ export class ProductDetailComponent implements OnInit {
               "decode"
             );
           }
-          console.log(this.productInfo);
         });
       }
     });
+    console.log(this.router.url);
   }
 
   filterAssembly(value: any, type: "encode" | "decode"): any {
@@ -86,5 +89,9 @@ export class ProductDetailComponent implements OnInit {
 
   keysOf(value) {
     return Object.keys(value);
+  }
+
+  back() {
+    this.location.back();
   }
 }
