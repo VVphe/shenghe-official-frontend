@@ -1,0 +1,22 @@
+<div class="params-list">
+  <div
+    *ngFor="let paramName of keysOf(PARAMS)"
+    [ngStyle]="{
+      height: 24 * PARAMS[paramName].count + 'px'
+    }"
+  >
+    <div class="name">
+      {{ paramName }}
+    </div>
+    <div class="inputs" *ngIf="productInfo.params[langType]">
+      <span
+        *ngFor="
+          let item of productInfo.params[langType][paramName];
+          let i = index;
+          trackBy: identifyFun
+        "
+        >{{ productInfo.params[langType][paramName][i] }}</span
+      >
+    </div>
+  </div>
+</div>

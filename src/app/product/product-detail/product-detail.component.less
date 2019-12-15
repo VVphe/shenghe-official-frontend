@@ -1,0 +1,36 @@
+.params-list {
+  width: 480px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  > div {
+    display: flex;
+    &:not(:first-child) {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+  .name {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    width: 180px;
+    height: 100%;
+    padding: 0 14px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(5, 1, 0, 1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    > span {
+      height: 24px;
+      border: 0;
+      &:not(:first-child) {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      outline: none;
+      padding: 2px 8px;
+    }
+  }
+}

@@ -22,4 +22,10 @@ export class ProductService extends CommonService {
       params: {}
     });
   }
+
+  getProductDetail(id: string): Observable<any> {
+    return this.http.get("/product/detail", {
+      params: this.getHttpParams({ id })
+    });
+  }
 }

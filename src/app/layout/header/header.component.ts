@@ -49,4 +49,12 @@ export class HeaderComponent implements OnInit {
       });
     }
   }
+
+  switchProduct(type) {
+    this.router.navigate(["/products"], {
+      queryParams: {
+        category: type
+      }
+    });
+  }
 }

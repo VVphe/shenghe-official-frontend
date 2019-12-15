@@ -1,0 +1,90 @@
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { ProductService } from "../product.service";
+import { LANGUAGES } from "../../constants";
+import { productParams } from "../constants";
+
+@Component({
+  selector: "app-product-detail",
+  templateUrl: "./product-detail.component.html",
+  styleUrls: ["./product-detail.component.less"]
+})
+export class ProductDetailComponent implements OnInit {
+  productInfo = {
+    name: {},
+    params: {},
+    pictures: {}
+  };
+
+  productId: string;
+  languages = LANGUAGES;
+  PARAMS = productParams;
+
+  langType = "English";
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private productService: ProductService
+  ) {}
+
+  ngOnInit() {
+    this.activatedRoute.queryParams.subscribe(params => {
+      if (params["id"]) {
+        this.productId = params["id"];
+        this.productService.getProductDetail(this.productId).subscribe(res => {
+          this.productInfo = res.data;
+          for (let i = 0; i < this.languages.length; i++) {
+            this.productInfo.params[this.languages[i].lang][
+              "Power"
+            ] = this.filterAssembly(
+              this.productInfo.params[this.languages[i].lang]["Power"],
+              "decode"
+            );
+            this.productInfo.params[this.languages[i].lang][
+              "Luminous flux"
+            ] = this.filterAssembly(
+              this.productInfo.params[this.languages[i].lang]["Luminous flux"],
+              "decode"
+            );
+          }
+          console.log(this.productInfo);
+        });
+      }
+    });
+  }
+
+  filterAssembly(value: any, type: "encode" | "decode"): any {
+    if (type === "encode") {
+      const str = (value[0] || "").replace(",", "").replace(" ", "");
+      if (str) {
+        const valueMatch = str.match(/\d+/g);
+        const unitMatch = str.match(/[a-zA-Z]+/g);
+        const _value = valueMatch ? +valueMatch[0] : "";
+        const unit = unitMatch ? unitMatch[0] : "";
+        return {
+          value: _value,
+          unit
+        };
+      } else {
+        return {
+          value: "",
+          unit: ""
+        };
+      }
+    } else {
+      if (value.value) {
+        return [`${value.value} ${value.unit}`];
+      } else {
+        return [""];
+      }
+    }
+  }
+
+  identifyFun(index, item) {
+    return index;
+  }
+
+  keysOf(value) {
+    return Object.keys(value);
+  }
+}

@@ -35,7 +35,7 @@
     </div>
     <div class="list-pagination" [hidden]="!showAfterQuery">
       <div class="list">
-        <div *ngFor="let product of productList">
+        <div *ngFor="let product of productList" (click)="toDetal(product.id)">
           <div class="box">
             <img src="{{ product.picture }}" />
           </div>

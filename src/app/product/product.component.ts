@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { ProductService } from "./product.service";
 import { category } from "./category-tree/category";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { CategoryTreeComponent } from "./category-tree/category-tree.component";
 
 @Component({
@@ -39,7 +39,8 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -183,6 +184,12 @@ export class ProductComponent implements OnInit {
           this.categoryTree.categoryType
         );
       }
+    });
+  }
+
+  toDetal(id: string) {
+    this.router.navigate(["/products/detail"], {
+      queryParams: { id }
     });
   }
 }

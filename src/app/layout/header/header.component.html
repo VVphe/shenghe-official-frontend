@@ -18,7 +18,17 @@
         >
         <div class="hover-extend" *ngIf="menu.label == 'Products'">
           <div class="hover-product">
-            <p>Outdoor</p>
+            <div>
+              <p>Outdoor</p>
+              <div (click)="switchProduct('Wallpack')">
+                <img src="/assets/images/Wallpack.png" />
+                <p>Wallpack</p>
+              </div>
+              <div (click)="switchProduct('Flood lighting')">
+                <img src="/assets/images/Flood lighting.png" />
+                <p>Flood lighting</p>
+              </div>
+            </div>
           </div>
         </div>
       </ng-container>

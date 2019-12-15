@@ -9,9 +9,10 @@ import { SliderComponent } from "./slider/slider.component";
 import { FormsModule } from "@angular/forms";
 import { ParamFilterComponent } from './param-filter/param-filter.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
-  declarations: [ProductComponent, CategoryTreeComponent, SliderComponent, ParamFilterComponent, ProductInfoComponent],
+  declarations: [ProductComponent, CategoryTreeComponent, SliderComponent, ParamFilterComponent, ProductInfoComponent, ProductDetailComponent],
   imports: [SharedModule, ProductRoutingModule, FormsModule]
 })
 export class ProductModule {}
