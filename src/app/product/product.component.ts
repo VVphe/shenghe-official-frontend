@@ -38,6 +38,20 @@ export class ProductComponent implements OnInit {
   categoryTree: CategoryTreeComponent;
 
   get isList() {
+    if (document.getElementsByClassName("ant-tooltip")) {
+      for (
+        let i = 0;
+        i < document.getElementsByClassName("ant-tooltip").length;
+        i++
+      ) {
+        const el = document.getElementsByClassName("ant-tooltip")[i];
+        if (this.router.url.split("?")[0] === "/products") {
+          el.classList.remove("hide");
+        } else {
+          el.classList.add("hide");
+        }
+      }
+    }
     return this.router.url.split("?")[0] === "/products";
   }
 
@@ -193,22 +207,8 @@ export class ProductComponent implements OnInit {
   }
 
   toDetail(id: string) {
-    this.router
-      .navigate(["/products/detail"], {
-        queryParams: { id }
-      })
-      .then(() => {
-        if (document.getElementsByClassName("ant-tooltip")) {
-          console.log(document.getElementsByClassName("ant-tooltip"));
-          for (
-            let i = 0;
-            i < document.getElementsByClassName("ant-tooltip").length;
-            i++
-          ) {
-            const el = document.getElementsByClassName("ant-tooltip")[i];
-            el.classList.add("hide");
-          }
-        }
-      });
+    this.router.navigate(["/products/detail"], {
+      queryParams: { id }
+    });
   }
 }
