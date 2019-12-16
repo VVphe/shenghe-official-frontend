@@ -199,7 +199,7 @@
         padding-bottom: 0px;
         color: #ffffff;
         font-size: 16px;
-        font-weight: bold;
+        // font-weight: bold;
     }
     button {
         margin: 0 auto;
@@ -212,5 +212,87 @@
         font-size: 14px;
         margin-top: 16px;
     } 
+}
+
+
+
+@media (max-width: 767.98px) {
+    .home-main-content {
+        width: 100%;
+        padding: 0 16px;
+    }
+    .carousel {
+        width: 100%;
+        height: 600px;
+        img {
+            // width: 100%;
+            height: 600px;
+            margin: 0 auto;
+            background-size: cover;
+        }
+    }
+    .product-entrance {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .product-wrapper-one {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        img {
+            margin: 48px auto;
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+        }
+    }
+    .product-wrapper-two {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: #F9F9F9;
+        img {
+            margin: 48px auto;
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+        }
+    }
+    .home-picture-group {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        justify-content: space-between;
+        img {
+            width: 50%;
+            height: 50%;
+            background-size: cover;
+        }
+    }
+    .home-text-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-info-details {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .home-contact-us {
+        width: 100%;
+        :first-child {
+            font-size: 18px;
+        }
+        :nth-child(2) {
+            font-size: 14px;
+            padding: 0px 16px;
+        }
+    }
 
 }
