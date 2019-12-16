@@ -15,9 +15,7 @@
         nz-icon
         [nzType]="category.expanded ? 'down' : 'right'"
         nzTheme="outline"
-        (click)="
-          $event.stopPropagation(); category.expanded = !category.expanded
-        "
+        (click)="$event.stopPropagation(); toggle(category)"
       ></i>
     </span>
     <ng-container

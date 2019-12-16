@@ -4,7 +4,7 @@
     [nzMax]="max"
     nzRange
     [(ngModel)]="value"
-    nzTooltipVisible="always"
+    [nzTooltipVisible]="tooltipStatus"
     nzTooltipPlacement="top"
     (ngModelChange)="handleValueChange($event)"
   ></nz-slider>

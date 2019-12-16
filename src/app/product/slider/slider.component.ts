@@ -19,6 +19,9 @@ export class SliderComponent implements OnInit {
   @Input()
   title = "test";
 
+  @Input()
+  tooltipStatus = "always";
+
   @Output()
   valueChange = new EventEmitter<number[]>();
 

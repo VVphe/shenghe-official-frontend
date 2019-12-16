@@ -4,6 +4,7 @@
     <app-slider
       [min]="0"
       [max]="300"
+      [tooltipStatus]="tooltipStatus"
       (valueChange)="handleValueChange($event, 'power')"
     ></app-slider>
   </div>
@@ -12,6 +13,7 @@
     <app-slider
       [min]="0"
       [max]="35000"
+      [tooltipStatus]="tooltipStatus"
       (valueChange)="handleValueChange($event, 'flux')"
     ></app-slider>
   </div>

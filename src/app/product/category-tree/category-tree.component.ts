@@ -20,6 +20,9 @@ export class CategoryTreeComponent implements OnInit {
   @Output()
   selectChange = new EventEmitter<any>();
 
+  @Output()
+  toggleChange = new EventEmitter<any>();
+
   @Input()
   selectedKey: string = "all";
 
@@ -50,6 +53,11 @@ export class CategoryTreeComponent implements OnInit {
       id,
       type
     });
+  }
+
+  toggle(category) {
+    category.expanded = !category.expanded;
+    this.toggleChange.emit();
   }
 
   calcTotalCount(index: number) {

@@ -22,14 +22,16 @@
           #categoryTree
           [categorys]="categorys"
           (selectChange)="handleSelectChange($event)"
+          (toggleChange)="handleToggleChange($event)"
           [selectedKey]="initSelected"
           [total]="total"
           [count]="count"
         ></app-category-tree>
       </div>
-      <div class="filter" *ngIf="categorys && categorys.length">
+      <div class="filter" *ngIf="categorys && categorys.length && showFilter">
         <app-param-filter
           (valueChange)="handleFilterChange($event)"
+          [tooltipStatus]="tooltipStatus"
         ></app-param-filter>
       </div>
     </div>

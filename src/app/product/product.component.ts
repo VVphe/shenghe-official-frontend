@@ -3,6 +3,7 @@ import { ProductService } from "./product.service";
 import { category } from "./category-tree/category";
 import { ActivatedRoute, Router } from "@angular/router";
 import { CategoryTreeComponent } from "./category-tree/category-tree.component";
+import { NzToolTipComponent } from "ng-zorro-antd";
 
 @Component({
   selector: "app-product",
@@ -33,6 +34,8 @@ export class ProductComponent implements OnInit {
   flux: number[];
 
   showAfterQuery = true;
+  showFilter = true;
+  tooltipStatus = "always";
 
   @ViewChild("categoryTree", { static: false })
   categoryTree: CategoryTreeComponent;
@@ -180,6 +183,13 @@ export class ProductComponent implements OnInit {
     this.category = value.id;
     this.categoryType = value.type;
     this.getProductList(false, false);
+  }
+
+  handleToggleChange() {
+    this.tooltipStatus = "never";
+    setTimeout(() => {
+      this.tooltipStatus = "always";
+    });
   }
 
   handlePageChange(page: number) {

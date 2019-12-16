@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 
 @Component({
   selector: "app-param-filter",
@@ -8,6 +8,9 @@ import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 export class ParamFilterComponent implements OnInit {
   @Output()
   valueChange = new EventEmitter<any>();
+
+  @Input()
+  tooltipStatus = "always";
 
   constructor() {}
 
