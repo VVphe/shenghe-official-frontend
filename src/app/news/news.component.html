@@ -1,1 +1,34 @@
-<p>news works!</p>
+<div class="news-layout">
+  <div class="news-wrapper">
+    <div class="categorys">
+      <span
+        (click)="changeCategory('all')"
+        [ngClass]="{ selected: currentCategory === 'all' }"
+        >All</span
+      >
+      <span
+        *ngFor="let category of categorys"
+        (click)="changeCategory(category)"
+        [ngClass]="{ selected: currentCategory === category }"
+        >{{ category }}</span
+      >
+    </div>
+    <div class="news-list">
+      <div *ngFor="let news of newsList" (click)="toDetail(news.id)">
+        <app-news-card
+          [thumbnail]="news.thumbnailUrl"
+          [title]="news.title"
+          [abstract]="news.content"
+          [date]="news.createTime"
+        ></app-news-card>
+      </div>
+      <nz-pagination
+        class="news-pagination"
+        [nzPageIndex]="pageIndex"
+        [nzTotal]="total"
+        [nzPageSize]="pageSize"
+        (nzPageIndexChange)="handlePageChange($event)"
+      ></nz-pagination>
+    </div>
+  </div>
+</div>

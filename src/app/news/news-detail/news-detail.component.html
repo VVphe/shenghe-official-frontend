@@ -1,0 +1,29 @@
+<div class="news-detail-layout">
+  <div class="news-detail-wrapper">
+    <div class="header">
+      <span (click)="back()">
+        <i nz-icon nzType="left" nzTheme="outline"></i>return
+      </span>
+    </div>
+    <div class="news-info">
+      <div class="title">
+        <p>{{ newsInfo.title }}</p>
+        <p>{{ formatTimestamp(newsInfo.createTime) }}</p>
+      </div>
+      <div class="content">
+        <div [innerHtml]="newsInfo.content"></div>
+      </div>
+    </div>
+    <div class="related" *ngIf="relatedNews && relatedNews.length">
+      <p>Related news</p>
+      <div *ngFor="let news of relatedNews" (click)="toDetail(news.id)">
+        <app-news-card
+          [thumbnail]="news.thumbnailUrl"
+          [title]="news.title"
+          [abstract]="news.content"
+          [date]="news.createTime"
+        ></app-news-card>
+      </div>
+    </div>
+  </div>
+</div>

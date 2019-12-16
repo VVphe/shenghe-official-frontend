@@ -33,6 +33,11 @@ const routes: Routes = [
           import("./aboutus/aboutus.module").then(
             module => module.AboutusModule
           )
+      },
+      {
+        path: "news",
+        loadChildren: () =>
+          import("./news/news.module").then(module => module.NewsModule)
       }
     ]
   }
