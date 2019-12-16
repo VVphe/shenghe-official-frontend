@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { NewsService } from "../news.service";
+import { Location } from "@angular/common";
 
 @Component({
   selector: "app-news-detail",
@@ -17,6 +18,7 @@ export class NewsDetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private newsService: NewsService,
+    private location: Location,
     private router: Router
   ) {}
 
@@ -31,7 +33,6 @@ export class NewsDetailComponent implements OnInit {
     this.newsService.getNewsDetail(id, lang).subscribe(res => {
       this.newsInfo = res.result;
       this.relatedNews = res.relateNews;
-      console.log(this.newsInfo);
     });
   }
 
@@ -47,5 +48,9 @@ export class NewsDetailComponent implements OnInit {
     this.router.navigate(["/news/detail"], {
       queryParams: { id }
     });
+  }
+
+  back() {
+    this.location.back();
   }
 }
