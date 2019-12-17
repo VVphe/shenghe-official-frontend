@@ -37,6 +37,8 @@ export class ProductComponent implements OnInit {
   showFilter = true;
   tooltipStatus = "always";
 
+  isFirstRouteByCategory = false;
+
   @ViewChild("categoryTree", { static: false })
   categoryTree: CategoryTreeComponent;
 
@@ -65,7 +67,7 @@ export class ProductComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getProductList(true, true).then(() => this.getCategorys());
+    // this.getProductList(true, true).then(() => this.getCategorys());
     this.activatedRoute.queryParams.subscribe(params => {
       if (params["query"]) {
         this.query = params["query"];
@@ -75,6 +77,9 @@ export class ProductComponent implements OnInit {
       this.category = "all";
       this.categoryType = "all";
       this.getProductList(true, true).then(() => {
+        if (!this.categorys || !this.categorys.length) {
+          this.getCategorys();
+        }
         if (this.categoryTree) {
           this.categoryTree.select(
             this.categoryTree.selectedKey,
@@ -145,6 +150,18 @@ export class ProductComponent implements OnInit {
         }
       }
       this.categorys = this.formatCategory(this.treeResult);
+      // this.activatedRoute.queryParams.subscribe(params => {
+      //   if (params["category"] && !this.isFirstRouteByCategory) {
+      //     this.category = this.findCategoryByName(params["category"]);
+      //     this.isFirstRouteByCategory = true;
+      //     if (this.categoryTree) {
+      //       this.categoryTree.select(
+      //         this.categoryTree.selectedKey,
+      //         this.categoryTree.categoryType
+      //       );
+      //     }
+      //   }
+      // });
     });
   }
 
@@ -165,6 +182,12 @@ export class ProductComponent implements OnInit {
       });
     }
     return result;
+  }
+
+  findCategoryByName(category): string {
+    return this.treeResult.filter(item =>
+      Object.values(item.name).includes(category)
+    )[0].id;
   }
 
   // calcCount(nodes: any[]): number {

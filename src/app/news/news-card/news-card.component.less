@@ -33,11 +33,44 @@
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 5;
       overflow: hidden;
+      > span {
+        *:not(:first-child) {
+          display: none;
+        }
+        *:not(span),
+        *:not(strong),
+        *:not(p),
+        *:not(div),
+        *:not(i),
+        *:not(a) {
+          display: none;
+        }
+      }
     }
     .date {
       font-size: 12px;
       font-weight: 400;
       color: rgba(0, 0, 0, 0.38);
+    }
+  }
+}
+
+::ng-deep {
+  .abstract {
+    > span {
+      //   *:not(:first-child) {
+      //     display: none;
+      //   }
+      *:not(span):not(strong):not(p):not(div):not(i):not(a) {
+        display: none;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.54);
+      }
     }
   }
 }

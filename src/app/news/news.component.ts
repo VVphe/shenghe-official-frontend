@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CATEGORYS } from "./constants";
 import { NewsService } from "./news.service";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-news",
@@ -20,10 +20,23 @@ export class NewsComponent implements OnInit {
 
   currentLang = "English";
 
-  constructor(private newsService: NewsService, private router: Router) {}
+  constructor(
+    private newsService: NewsService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.getNewsList();
+    // this.getNewsList();
+    this.activatedRoute.queryParams.subscribe(params => {
+      if (params["category"]) {
+        this.currentCategory = params["category"];
+      }
+      if (params["pageIndex"]) {
+        this.pageIndex = params["pageIndex"];
+      }
+      this.getNewsList();
+    });
   }
 
   getNewsList() {
@@ -43,11 +56,18 @@ export class NewsComponent implements OnInit {
 
   changeCategory(category: string) {
     this.currentCategory = category;
+    this.pageIndex = 1;
+    this.router.navigate(["/news"], {
+      queryParams: {
+        category: this.currentCategory,
+        pageIndex: this.pageIndex
+      }
+    });
   }
 
   handlePageChange(pageNumber: number) {
     this.pageIndex = pageNumber;
-    this.getNewsList();
+    // this.getNewsList();
     this.router.navigate(["/news"], {
       queryParams: {
         category: this.currentCategory,

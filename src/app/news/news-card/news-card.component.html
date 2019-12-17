@@ -3,7 +3,9 @@
   <div class="news-info">
     <div>
       <p class="title">{{ title }}</p>
-      <p class="abstract">{{ abstract }}</p>
+      <p class="abstract">
+        <span [innerHtml]="abstract"></span>
+      </p>
     </div>
     <p class="date">{{ formatTimestamp(date) }}</p>
   </div>
