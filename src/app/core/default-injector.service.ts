@@ -20,7 +20,11 @@ export class DefaultInjectorService implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     let url = req.url;
-    if (!url.startsWith("https://") && !url.startsWith("http://")) {
+    if (
+      !url.startsWith("https://") &&
+      !url.startsWith("http://") &&
+      !url.startsWith("/assets/")
+    ) {
       url = environment.baseUrl + url; // 添加basicUrl地址
     }
     return next

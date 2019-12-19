@@ -1,17 +1,12 @@
-// import { Component, OnInit } from "@angular/core";
-// import { MENUS } from "../menus";
+import { Component, OnInit } from "@angular/core";
 
-// @Component({
-//   // selector: "app-footer",
-//   templateUrl: "./pop-contact.component.html",
-//   styleUrls: ["./pop-contact.component.less"]
-// })
-// export class FooterComponent implements OnInit {
-//   menus: any[];
+@Component({
+  selector: "app-pop-contact",
+  templateUrl: "./pop-contact.component.html",
+  styleUrls: ["./pop-contact.component.less"]
+})
+export class PopContactComponent implements OnInit {
+  constructor() {}
 
-//   constructor() {}
-
-//   ngOnInit() {
-//     this.menus = MENUS;
-//   }
-// }
+  ngOnInit() {}
+}

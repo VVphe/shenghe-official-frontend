@@ -1,10 +1,20 @@
 <div class="back-contact-warpper">
   <div class="back-contact-group">
     <div class="back-to-top">
-        <img src="/assets/images/contact-img/icon-backtotop.png">
+      <img src="/assets/images/contact-img/icon-backtotop.png" />
     </div>
-    <div class="contact-us-bottom">
-      <img src="/assets/images/contact-img/icon-contactus.png">
-  </div>
+    <div class="contact-us-bottom" (click)="isVisible = true">
+      <img src="/assets/images/contact-img/icon-contactus.png" />
+    </div>
   </div>
 </div>
+<nz-modal
+  [(nzVisible)]="isVisible"
+  [nzContent]="modalContent"
+  (nzOnCancel)="isVisible = false"
+  [nzFooter]="'null'"
+>
+  <ng-template #modalContent>
+    <app-pop-contact></app-pop-contact>
+  </ng-template>
+</nz-modal>
