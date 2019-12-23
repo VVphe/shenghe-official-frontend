@@ -6,10 +6,12 @@ import {
   NzInputModule,
   NzSliderModule,
   NzToolTipModule,
-  NzPaginationModule
+  NzPaginationModule,
+  NzModalModule
 } from "ng-zorro-antd";
 import { HttpClientModule } from "@angular/common/http";
-import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzTabsModule } from "ng-zorro-antd/tabs";
+import { TranslateModule } from "@ngx-translate/core";
 
 const SHARED_MODULES = [
   CommonModule,
@@ -20,7 +22,9 @@ const SHARED_MODULES = [
   NzSliderModule,
   NzToolTipModule,
   NzPaginationModule,
-  NzTabsModule
+  NzTabsModule,
+  NzModalModule,
+  TranslateModule
 ];
 
 @NgModule({

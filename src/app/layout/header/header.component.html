@@ -60,7 +60,12 @@
   </div>
   <nz-dropdown-menu #menu="nzDropdownMenu">
     <ul nz-menu nzSelectable>
-      <li nz-menu-item *ngFor="let lang of languages" class="lang-li">
+      <li
+        nz-menu-item
+        *ngFor="let lang of languages"
+        class="lang-li"
+        (click)="switchLanguage(lang)"
+      >
         <img [src]="lang.icon" width="28px" height="28px" /><span>{{
           lang.type
         }}</span>

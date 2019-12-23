@@ -6,7 +6,11 @@ import { AppComponent } from "./app.component";
 import { LayoutModule } from "./layout/layout.module";
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from "ng-zorro-antd";
 import { FormsModule } from "@angular/forms";
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import {
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+  HttpClient
+} from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { registerLocaleData } from "@angular/common";
 import zh from "@angular/common/locales/zh";
@@ -15,6 +19,8 @@ import { ContactModule } from "./contact/contact.module";
 import { ProductModule } from "./product/product.module";
 import { DefaultInjectorService } from "./core/default-injector.service";
 import { AboutusModule } from "./aboutus/aboutus.module";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 registerLocaleData(zh);
 
@@ -28,6 +34,13 @@ registerLocaleData(zh);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     HomeModule,
     ContactModule,
     ProductModule,
@@ -44,3 +57,7 @@ registerLocaleData(zh);
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

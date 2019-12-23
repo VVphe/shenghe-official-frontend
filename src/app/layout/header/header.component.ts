@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { MENUS } from "../menus";
 import { LANGUAGES } from "src/app/constants";
 import { Router, ActivatedRoute } from "@angular/router";
+import { LanguageService } from "src/app/shared/language.service";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-header",
@@ -16,7 +18,11 @@ export class HeaderComponent implements OnInit {
   showSearch = false;
   searchValue = "";
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private langService: LanguageService
+  ) {}
 
   ngOnInit() {
     this.menus = MENUS;
@@ -31,15 +37,8 @@ export class HeaderComponent implements OnInit {
 
   toggleSearch() {
     this.showSearch = !this.showSearch;
-    // if (!this.showSearch) {
-    //   this.searchValue = "";
-    //   this.router.navigate(["/products"], {
-    //     queryParams: {
-    //       query: this.searchValue
-    //     }
-    //   });
-    // }
   }
+
   handleSearch(event: KeyboardEvent) {
     if (event.keyCode === 13) {
       this.router.navigate(["/products"], {
@@ -56,5 +55,10 @@ export class HeaderComponent implements OnInit {
         category: type
       }
     });
+  }
+
+  switchLanguage(lang) {
+    this.language = lang;
+    this.langService.emit(lang.config);
   }
 }

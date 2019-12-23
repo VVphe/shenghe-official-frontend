@@ -1,17 +1,37 @@
-// import { Component, OnInit } from "@angular/core";
-// import { MENUS } from "../menus";
+import { Component, OnInit, HostListener } from "@angular/core";
+import { TimeInterval } from "rxjs/internal/operators/timeInterval";
 
-// @Component({
-//   // selector: "app-footer",
-//   templateUrl: "./pop-contact.component.html",
-//   styleUrls: ["./pop-contact.component.less"]
-// })
-// export class FooterComponent implements OnInit {
-//   menus: any[];
+@Component({
+  selector: "app-back-to-top",
+  templateUrl: "./back-to-top.component.html",
+  styleUrls: ["./back-to-top.component.less"]
+})
+export class BackToTopComponent implements OnInit {
+  isVisible = false;
 
-//   constructor() {}
+  get showBackTopBtn() {
+    return document.documentElement.scrollTop > 200;
+  }
 
-//   ngOnInit() {
-//     this.menus = MENUS;
-//   }
-// }
+  @HostListener("window:scroll", [])
+  onScrollChange() {}
+
+  constructor() {}
+
+  ngOnInit() {}
+
+  backToTop() {
+    let iSpeed = 0;
+    let iTimer;
+    clearInterval(iTimer);
+    iTimer = setInterval(() => {
+      const heightTop =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      iSpeed = Math.floor((0 - heightTop) / 8);
+      document.documentElement.scrollTop = heightTop + iSpeed;
+      if (document.documentElement.scrollTop <= 0) {
+        clearInterval(iTimer);
+      }
+    }, 30);
+  }
+}
