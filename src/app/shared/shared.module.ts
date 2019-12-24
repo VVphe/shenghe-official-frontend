@@ -12,9 +12,12 @@ import {
 import { HttpClientModule } from "@angular/common/http";
 import { NzTabsModule } from "ng-zorro-antd/tabs";
 import { TranslateModule } from "@ngx-translate/core";
+import { PopContactComponent } from "./pop-contact/pop-contact.component";
+import { FormsModule } from "@angular/forms";
 
 const SHARED_MODULES = [
   CommonModule,
+  FormsModule,
   NzIconModule,
   NzDropDownModule,
   NzInputModule,
@@ -28,8 +31,8 @@ const SHARED_MODULES = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [PopContactComponent],
   imports: [SHARED_MODULES],
-  exports: [SHARED_MODULES]
+  exports: [SHARED_MODULES, PopContactComponent]
 })
 export class SharedModule {}

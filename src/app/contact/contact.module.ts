@@ -4,7 +4,6 @@ import { ContactRoutingModule } from './contact-routing.module';
 import { ContactComponent } from './contact.component';
 import { SharedModule } from '../shared/shared.module';
 
-
 @NgModule({
   declarations: [ContactComponent],
   imports: [
@@ -12,4 +11,4 @@ import { SharedModule } from '../shared/shared.module';
     ContactRoutingModule
   ]
 })
-export class ContactModule { }
+export class ContactModule {}

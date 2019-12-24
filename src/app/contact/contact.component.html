@@ -39,40 +39,70 @@
         <form class="contact-form-inputs">
           <div class="row-group">
             <div class="input-group-item">
-              <p>{{'First Name *' | translate}}</p>
-              <input type="text" name="" />
+              <p>First Name *</p>
+              <input
+                type="text"
+                [(ngModel)]="contactInfo.firstName"
+                [ngModelOptions]="{ standalone: true }"
+              />
             </div>
             <div class="input-group-item">
-              <p>{{'Last Name *' | translate}}</p>
-              <input type="text" name="" />
-            </div>
-          </div>
-          <div class="row-group">
-            <div class="input-group-item">
-              <p>{{'E-mail address *' | translate}}</p>
-              <input type="text" name="" />
-            </div>
-            <div class="input-group-item">
-              <p>{{'Telephone number *' | translate}}</p>
-              <input type="text" name="" />
+              <p>Last Name *</p>
+              <input
+                type="text"
+                [(ngModel)]="contactInfo.lastName"
+                [ngModelOptions]="{ standalone: true }"
+              />
             </div>
           </div>
           <div class="row-group">
             <div class="input-group-item">
-              <p>{{'Company' | translate}}</p>
-              <input type="text" name="" />
+              <p>E-mail address *</p>
+              <input
+                type="text"
+                [(ngModel)]="contactInfo.email"
+                [ngModelOptions]="{ standalone: true }"
+              />
             </div>
             <div class="input-group-item">
-              <p>{{'Position' | translate}}</p>
-              <input type="text" name="" />
+              <p>Telephone number *</p>
+              <input
+                type="text"
+                [(ngModel)]="contactInfo.telephone"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+          </div>
+          <div class="row-group">
+            <div class="input-group-item">
+              <p>Company</p>
+              <input
+                type="text"
+                [(ngModel)]="contactInfo.company"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="input-group-item">
+              <p>Position</p>
+              <input
+                type="text"
+                [(ngModel)]="contactInfo.position"
+                [ngModelOptions]="{ standalone: true }"
+              />
             </div>
           </div>
           <div class="input-group-item">
-            <p>{{'Comments *' | translate}}</p>
-            <textarea rows="10" cols="30"> </textarea>
+            <p>Comments *</p>
+            <textarea
+              rows="10"
+              cols="30"
+              [(ngModel)]="contactInfo.comments"
+              [ngModelOptions]="{ standalone: true }"
+            >
+            </textarea>
           </div>
           <div class="contact-submit-button">
-            <button type="button">{{'Contact Us' | translate}}</button>
+            <button type="button" (click)="contact()">Contact Us</button>
           </div>
         </form>
       </div>
