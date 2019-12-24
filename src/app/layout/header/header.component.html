@@ -14,19 +14,19 @@
           class="menu {{ menu.label }}"
           [routerLink]="[menu.link]"
           routerLinkActive="router-link-active"
-          >{{ menu.label }}</a
+          >{{ menu.label | translate }}</a
         >
         <div class="hover-extend" *ngIf="menu.label == 'Products'">
           <div class="hover-product">
             <div>
-              <p>Outdoor</p>
+              <p>{{'Outdoor' | translate}}</p>
               <div (click)="switchProduct('Wallpack')">
                 <img src="/assets/images/Wallpack.png" />
-                <p>Wallpack</p>
+                <p>{{'Wallpack' | translate}}</p>
               </div>
               <div (click)="switchProduct('Flood lighting')">
                 <img src="/assets/images/Flood lighting.png" />
-                <p>Flood lighting</p>
+                <p>{{'Flood lighting' | translate}}</p>
               </div>
             </div>
           </div>
