@@ -5,7 +5,6 @@ import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
-import { PopContactComponent } from "./pop-contact/pop-contact.component";
 import { BackToTopComponent } from "./backToTop/back-to-top.component";
 
 @NgModule({
@@ -13,7 +12,6 @@ import { BackToTopComponent } from "./backToTop/back-to-top.component";
     LayoutComponent,
     HeaderComponent,
     FooterComponent,
-    PopContactComponent,
     BackToTopComponent
   ],
   imports: [SharedModule, RouterModule, FormsModule],

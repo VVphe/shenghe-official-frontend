@@ -1,13 +1,14 @@
 import { Component, OnInit } from "@angular/core";
-import { ContactService } from "../shared/contact.service";
 import { NzMessageService } from "ng-zorro-antd";
+import { TranslateService } from "@ngx-translate/core";
+import { ContactService } from "src/app/shared/contact.service";
 
 @Component({
-  selector: "app-contact",
-  templateUrl: "./contact.component.html",
-  styleUrls: ["./contact.component.less"]
+  selector: "app-pop-contact",
+  templateUrl: "./pop-contact.component.html",
+  styleUrls: ["./pop-contact.component.less"]
 })
-export class ContactComponent implements OnInit {
+export class PopContactComponent implements OnInit {
   contactInfo = {
     firstName: "",
     lastName: "",
@@ -27,8 +28,9 @@ export class ContactComponent implements OnInit {
   };
 
   constructor(
+    private msg: NzMessageService,
     private contactService: ContactService,
-    private msg: NzMessageService
+    private translate: TranslateService
   ) {}
 
   ngOnInit() {}
