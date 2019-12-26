@@ -14,7 +14,7 @@ export class LanguageService {
     this.language$.next(lang);
   }
 
-  subscribe(callback) {
+  subscribe(callback?) {
     this.language$.subscribe(lang => {
       this.translate.use(lang);
       if (callback) {
