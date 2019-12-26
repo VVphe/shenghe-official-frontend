@@ -99,7 +99,9 @@
             | translate
         }}
       </p>
-      <button type="button">{{ "Contact Us" | translate }}</button>
+      <button type="button" (click)="isVisible = true">
+        {{ "Contact Us" | translate }}
+      </button>
     </div>
 
     <!-- --------原内容-------- -->
@@ -163,3 +165,15 @@
         </div> -->
   </div>
 </div>
+
+<nz-modal
+  [(nzVisible)]="isVisible"
+  [nzContent]="modalContent"
+  (nzOnCancel)="isVisible = false"
+  nzClassName="contact-modal"
+  [nzFooter]="null"
+>
+  <ng-template #modalContent>
+    <app-pop-contact></app-pop-contact>
+  </ng-template>
+</nz-modal>

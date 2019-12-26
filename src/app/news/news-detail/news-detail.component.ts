@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { NewsService } from "../news.service";
 import { Location } from "@angular/common";
+import { LanguageService } from "src/app/shared/language.service";
 
 @Component({
   selector: "app-news-detail",
@@ -19,14 +20,28 @@ export class NewsDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private newsService: NewsService,
     private location: Location,
-    private router: Router
+    private router: Router,
+    private languageService: LanguageService
   ) {}
 
   ngOnInit() {
+    this.currentLang = this.languageService.getCurrentLang();
     this.activatedRoute.queryParams.subscribe(params => {
       if (params["id"]) this.newsId = params["id"];
       this.getNewsDetail(this.newsId, this.currentLang);
     });
+
+    const langSwitchCb = lang => {
+      this.currentLang =
+        {
+          es_ES: "Spanish",
+          pt_PT: "Portuguese",
+          es_US: "English"
+        }[lang] || "English";
+      this.getNewsDetail(this.newsId, this.currentLang);
+    };
+
+    this.languageService.subscribe(langSwitchCb);
   }
 
   getNewsDetail(id, lang) {

@@ -52,15 +52,21 @@ export const productParams = {
   "Ambient temperature": {
     count: 1
   },
+  "Vibration level": {
+    count: 1
+  },
+  EPA: {
+    count: 1
+  },
   Mounting: {
     count: 1
   },
   Controls: {
-    count: 1,
+    count: 3,
     optional: true
   },
   Applications: {
-    count: 3
+    count: 4
   }
 };
 
