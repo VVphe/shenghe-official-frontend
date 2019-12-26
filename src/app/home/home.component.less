@@ -14,7 +14,8 @@
         animation-play-state: paused !important;
       }
       &.play {
-        animation: leftMove 15s ease-out infinite;
+        animation: leftMove 30s cubic-bezier(0, 1.04, 0, 0.99) infinite;
+        // animation-delay: 5s;
       }
       @keyframes leftMove {
         0% {
