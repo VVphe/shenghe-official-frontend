@@ -4,6 +4,8 @@ import { category } from "./category-tree/category";
 import { ActivatedRoute, Router } from "@angular/router";
 import { CategoryTreeComponent } from "./category-tree/category-tree.component";
 import { NzToolTipComponent } from "ng-zorro-antd";
+import { TranslateService } from "@ngx-translate/core";
+import { LanguageService } from "../shared/language.service";
 
 @Component({
   selector: "app-product",
@@ -63,11 +65,12 @@ export class ProductComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private languageService: LanguageService
   ) {}
 
   ngOnInit() {
-    // this.getProductList(true, true).then(() => this.getCategorys());
+    this.lang = this.languageService.getCurrentLang();
     this.activatedRoute.queryParams.subscribe(params => {
       if (params["query"]) {
         this.query = params["query"];
@@ -88,7 +91,19 @@ export class ProductComponent implements OnInit {
         }
       });
     });
-    console.log(this.router.url);
+
+    const langSwitchCb = lang => {
+      this.lang =
+        {
+          es_ES: "Spanish",
+          pt_PT: "Portuguese",
+          es_US: "English"
+        }[lang] || "English";
+      this.getProductList(false, false);
+      this.categorys = this.formatCategory(this.treeResult, this.lang);
+    };
+
+    this.languageService.subscribe(langSwitchCb);
   }
 
   getProductList(totalReset = false, countReset = false) {
@@ -149,7 +164,7 @@ export class ProductComponent implements OnInit {
           this.treeResult.push(result[i]);
         }
       }
-      this.categorys = this.formatCategory(this.treeResult);
+      this.categorys = this.formatCategory(this.treeResult, this.lang);
       // this.activatedRoute.queryParams.subscribe(params => {
       //   if (params["category"] && !this.isFirstRouteByCategory) {
       //     this.category = this.findCategoryByName(params["category"]);
@@ -178,7 +193,7 @@ export class ProductComponent implements OnInit {
         //     : categorys[i].count,
         parent: categorys[i].parent || null,
         expanded: true,
-        children: this.formatCategory(categorys[i].children || [])
+        children: this.formatCategory(categorys[i].children || [], lang)
       });
     }
     return result;

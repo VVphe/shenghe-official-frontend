@@ -1,72 +1,109 @@
 <div class="home-wrapper">
-    <div class="carousel">
-      <div class="wrap"> 
-          <img src="/assets/images/home-img/home-banner-04.png" alt="2">
-                    
+  <div class="carousel">
+    <div class="wrap">
+      <div class="photos play" id="images">
+        <img src="/assets/images/home-img/home-banner-01.jpg" />
+        <img src="/assets/images/home-img/home-banner-02.jpg" />
+        <img src="/assets/images/home-img/home-banner-03.png" />
+        <img src="/assets/images/home-img/home-banner-04.png" />
+        <img src="/assets/images/home-img/home-banner-05.png" />
+        <img src="/assets/images/home-img/home-banner-01.jpg" />
       </div>
-
+      <!-- <div class="radio">
+        <a id="a1" class="dot"></a>
+        <a id="a2" class="dot"></a>
+        <a id="a3" class="dot"></a>
+        <a id="a4" class="dot"></a>
+        <a id="a5" class="dot"></a>
+      </div> -->
     </div>
-    <div class="home-main-content">
+  </div>
+  <div class="home-main-content">
     <div class="product-entrance">
-        <div class="product-wrapper-one">
-            <p>{{'Wallpack' | translate}}</p>
-            <p>{{'Larix Lighting presented representative Wallpack' | translate}}</p>
-            <a href="">{{'Learn more' | translate}} ></a>
-            <img src="/assets/images/home-img/pic-wallpack.png">
-        </div>
-        <div class="product-wrapper-two">
-            <p>{{'Flood lighting' | translate}}</p>
-            <p>{{'Larix Lighting presented representative Flood lighting' | translate}}</p>
-            <a href="">{{'Learn more' | translate}} ></a>
-            <img src="/assets/images/home-img/pic-floodlighting.png">
-        </div>
-
+      <div class="product-wrapper-one">
+        <p>{{ "Wallpack" | translate }}</p>
+        <p>
+          {{ "Larix Lighting presented representative Wallpack" | translate }}
+        </p>
+        <a href="">{{ "Learn more" | translate }} ></a>
+        <img src="/assets/images/home-img/pic-wallpack.png" />
+      </div>
+      <div class="product-wrapper-two">
+        <p>{{ "Flood lighting" | translate }}</p>
+        <p>
+          {{
+            "Larix Lighting presented representative Flood lighting" | translate
+          }}
+        </p>
+        <a href="">{{ "Learn more" | translate }} ></a>
+        <img src="/assets/images/home-img/pic-floodlighting.png" />
+      </div>
     </div>
     <div class="home-picture-group">
-        <img src="/assets/images/home-img/home-picture-01.png">
-        <img src="/assets/images/home-img/home-picture-02.png">
-        <img src="/assets/images/home-img/home-picture-03.png">
-        <img src="/assets/images/home-img/home-picture-04.png">
+      <img src="/assets/images/home-img/home-picture-01.png" />
+      <img src="/assets/images/home-img/home-picture-02.png" />
+      <img src="/assets/images/home-img/home-picture-03.png" />
+      <img src="/assets/images/home-img/home-picture-04.png" />
     </div>
     <div class="home-text-info">
-        <p>{{'Our Company' | translate}}</p>
-        <p>{{'Larix Lighting has been committed to design and manufacture of customer-centric
+      <p>{{ "Our Company" | translate }}</p>
+      <p>
+        {{
+          "Larix Lighting has been committed to design and manufacture of customer-centric
            outdoor LED lighting products to industrial, commercial, residential and OEM markets. 
-           We look forward to building long-term partnership with customers globally!' | translate}}</p>
+           We look forward to building long-term partnership with customers globally!"
+            | translate
+        }}
+      </p>
     </div>
     <div class="divide-line"></div>
-    
+
     <div class="home-contact-info">
-        <div class="contact-info-details">
+      <div class="contact-info-details">
         <div class="title-Tel">
-          <p><span>{{'Tel:' | translate}}</span><br/> +86-21-6280-5015</p>
+          <p>
+            <span>{{ "Tel:" | translate }}</span
+            ><br />
+            +86-21-6280-5015
+          </p>
         </div>
         <div class="title-Email">
-          <p><span>{{'Email:' | translate}} </span><br/>sales@larixlighting.com</p>
+          <p>
+            <span>{{ "Email:" | translate }} </span
+            ><br />sales@larixlighting.com
+          </p>
         </div>
         <div class="title-HoursOfOperation">
           <p>
-            <span>{{'Hours of Operation:' | translate}}</span> <br/>09:00-18:00 <br />
-            ({{'Monday - Friday' | translate}})
+            <span>{{ "Hours of Operation:" | translate }}</span>
+            <br />09:00-18:00 <br />
+            ({{ "Monday - Friday" | translate }})
           </p>
         </div>
         <div class="title-Address">
           <p>
-            <span>{{'Address:' | translate}}</span> <br/>{{'Room 204, Block A, No. 303,' | translate}}<br />
-            {{'Shangzhong Road, Xuhui District, Shanghai,' | translate}}<br />
-            {{'China' | translate}}
+            <span>{{ "Address:" | translate }}</span> <br />{{
+              "Room 204, Block A, No. 303," | translate
+            }}<br />
+            {{ "Shangzhong Road, Xuhui District, Shanghai," | translate }}<br />
+            {{ "China" | translate }}
           </p>
         </div>
       </div>
     </div>
     <div class="home-contact-us">
-        <p>{{'Our Philosophy Our Slogan' | translate}}</p>
-        <p>{{'high quality  cost-efficient products and OEM/ODM solutions' | translate}}</p>
-        <button type="button">{{'Contact Us' | translate}}</button>
+      <p>{{ "Our Philosophy Our Slogan" | translate }}</p>
+      <p>
+        {{
+          "high quality  cost-efficient products and OEM/ODM solutions"
+            | translate
+        }}
+      </p>
+      <button type="button">{{ "Contact Us" | translate }}</button>
     </div>
 
-<!-- --------原内容-------- -->
-        <!-- <div class="product-entrance">
+    <!-- --------原内容-------- -->
+    <!-- <div class="product-entrance">
           <div class="product-wrapper-one">
               <p>Wallpack</p>
               <p>Larix Lighting presented representative Wallpack</p>
@@ -124,5 +161,5 @@
           <p>high quality  cost-efficient products and OEM/ODM solutions</p>
           <button type="button">Contact Us</button>
         </div> -->
-
+  </div>
 </div>

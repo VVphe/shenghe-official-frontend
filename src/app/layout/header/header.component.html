@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" *ngIf="!isMobile">
   <div class="logo">
     <img
       class="logo"
@@ -19,14 +19,14 @@
         <div class="hover-extend" *ngIf="menu.label == 'Products'">
           <div class="hover-product">
             <div>
-              <p>{{'Outdoor' | translate}}</p>
+              <p>{{ "Outdoor" | translate }}</p>
               <div (click)="switchProduct('Wallpack')">
                 <img src="/assets/images/Wallpack.png" />
-                <p>{{'Wallpack' | translate}}</p>
+                <p>{{ "Wallpack" | translate }}</p>
               </div>
               <div (click)="switchProduct('Flood lighting')">
                 <img src="/assets/images/Flood lighting.png" />
-                <p>{{'Flood lighting' | translate}}</p>
+                <p>{{ "Flood lighting" | translate }}</p>
               </div>
             </div>
           </div>
@@ -72,4 +72,15 @@
       </li>
     </ul>
   </nz-dropdown-menu>
+</div>
+<div class="mobile-header" *ngIf="isMobile">
+  <i class="menu" nz-icon nzType="menu" nzTheme="outline"></i>
+  <div class="logo">
+    <img
+      class="logo"
+      src="/assets/images/Larix-Logo.png"
+      [routerLink]="['/home']"
+      routerLinkActive="router-link-active"
+    />
+  </div>
 </div>

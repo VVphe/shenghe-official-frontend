@@ -4,6 +4,7 @@ import { LANGUAGES } from "src/app/constants";
 import { Router, ActivatedRoute } from "@angular/router";
 import { LanguageService } from "src/app/shared/language.service";
 import { TranslateService } from "@ngx-translate/core";
+import { DeviceService } from "src/app/shared/device.service";
 
 @Component({
   selector: "app-header",
@@ -21,8 +22,13 @@ export class HeaderComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private langService: LanguageService
+    private langService: LanguageService,
+    private deviceService: DeviceService
   ) {}
+
+  get isMobile() {
+    return this.deviceService.isMobile;
+  }
 
   ngOnInit() {
     this.menus = MENUS;

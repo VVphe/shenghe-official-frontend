@@ -14,13 +14,28 @@ export class LanguageService {
     this.language$.next(lang);
   }
 
-  subscribe() {
+  subscribe(callback) {
     this.language$.subscribe(lang => {
       this.translate.use(lang);
+      if (callback) {
+        callback(lang);
+      }
     });
   }
 
   onLangChange(callback: Function) {
-    this.translate.onLangChange.subscribe(callback());
+    this.translate.onLangChange.subscribe(value => {
+      console.log(value);
+      callback();
+    });
+  }
+
+  getCurrentLang() {
+    const langMap = {
+      es_ES: "Spanish",
+      pt_PT: "Portuguese",
+      es_US: "English"
+    };
+    return langMap[this.translate.currentLang] || "English";
   }
 }

@@ -4,13 +4,13 @@
       <span
         (click)="changeCategory('all')"
         [ngClass]="{ selected: currentCategory === 'all' }"
-        >All</span
+        >{{ "All" | translate }}</span
       >
       <span
         *ngFor="let category of categorys"
         (click)="changeCategory(category)"
         [ngClass]="{ selected: currentCategory === category }"
-        >{{ category }}</span
+        >{{ category | translate }}</span
       >
     </div>
     <div class="news-list">

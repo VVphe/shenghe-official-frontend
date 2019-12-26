@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { CATEGORYS } from "./constants";
 import { NewsService } from "./news.service";
 import { Router, ActivatedRoute } from "@angular/router";
+import { LanguageService } from "../shared/language.service";
 
 @Component({
   selector: "app-news",
@@ -23,11 +24,12 @@ export class NewsComponent implements OnInit {
   constructor(
     private newsService: NewsService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private languageService: LanguageService
   ) {}
 
   ngOnInit() {
-    // this.getNewsList();
+    this.currentLang = this.languageService.getCurrentLang();
     this.activatedRoute.queryParams.subscribe(params => {
       if (params["category"]) {
         this.currentCategory = params["category"];
@@ -37,6 +39,18 @@ export class NewsComponent implements OnInit {
       }
       this.getNewsList();
     });
+
+    const langSwitchCb = lang => {
+      this.currentLang =
+        {
+          es_ES: "Spanish",
+          pt_PT: "Portuguese",
+          es_US: "English"
+        }[lang] || "English";
+      this.getNewsList();
+    };
+
+    this.languageService.subscribe(langSwitchCb);
   }
 
   getNewsList() {
