@@ -4,6 +4,7 @@ import { ProductService } from "../product.service";
 import { LANGUAGES } from "../../constants";
 import { productParams } from "../constants";
 import { Location } from "@angular/common";
+import { LanguageService } from "src/app/shared/language.service";
 
 @Component({
   selector: "app-product-detail",
@@ -27,33 +28,47 @@ export class ProductDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
     private location: Location,
-    private router: Router
+    private languageService: LanguageService
   ) {}
 
   ngOnInit() {
+    this.langType = this.languageService.getCurrentLang();
     this.activatedRoute.queryParams.subscribe(params => {
       if (params["id"]) {
         this.productId = params["id"];
-        this.productService.getProductDetail(this.productId).subscribe(res => {
-          this.productInfo = res.data;
-          for (let i = 0; i < this.languages.length; i++) {
-            this.productInfo.params[this.languages[i].lang][
-              "Power"
-            ] = this.filterAssembly(
-              this.productInfo.params[this.languages[i].lang]["Power"],
-              "decode"
-            );
-            this.productInfo.params[this.languages[i].lang][
-              "Luminous flux"
-            ] = this.filterAssembly(
-              this.productInfo.params[this.languages[i].lang]["Luminous flux"],
-              "decode"
-            );
-          }
-        });
+        this.getProductDetail();
       }
     });
-    console.log(this.router.url);
+    const langSwitchCb = lang => {
+      this.langType =
+        {
+          es_ES: "Spanish",
+          pt_PT: "Portuguese",
+          es_US: "English"
+        }[lang] || "English";
+    };
+
+    this.languageService.subscribe(langSwitchCb);
+  }
+
+  getProductDetail() {
+    this.productService.getProductDetail(this.productId).subscribe(res => {
+      this.productInfo = res.data;
+      for (let i = 0; i < this.languages.length; i++) {
+        this.productInfo.params[this.languages[i].lang][
+          "Power"
+        ] = this.filterAssembly(
+          this.productInfo.params[this.languages[i].lang]["Power"],
+          "decode"
+        );
+        this.productInfo.params[this.languages[i].lang][
+          "Luminous flux"
+        ] = this.filterAssembly(
+          this.productInfo.params[this.languages[i].lang]["Luminous flux"],
+          "decode"
+        );
+      }
+    });
   }
 
   filterAssembly(value: any, type: "encode" | "decode"): any {
