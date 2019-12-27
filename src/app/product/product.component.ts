@@ -35,7 +35,6 @@ export class ProductComponent implements OnInit {
   power: number[];
   flux: number[];
 
-  showAfterQuery = true;
   showFilter = true;
   tooltipStatus = "always";
 
@@ -107,7 +106,6 @@ export class ProductComponent implements OnInit {
   }
 
   getProductList(totalReset = false, countReset = false) {
-    // this.showAfterQuery = false;
     return new Promise(resolve => {
       const params = {
         language: this.lang,
@@ -142,7 +140,6 @@ export class ProductComponent implements OnInit {
           });
         }
         resolve();
-        // this.showAfterQuery = true;
       });
     });
   }

@@ -35,7 +35,7 @@
         ></app-param-filter>
       </div>
     </div>
-    <div class="list-pagination" [hidden]="!showAfterQuery">
+    <div class="list-pagination">
       <div class="list">
         <div *ngFor="let product of productList" (click)="toDetail(product.id)">
           <div class="box">
