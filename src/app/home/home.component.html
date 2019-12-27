@@ -25,7 +25,7 @@
         <p>
           {{ "Larix Lighting presented representative Wallpack" | translate }}
         </p>
-        <a href="">{{ "Learn more" | translate }} ></a>
+        <a (click)="toProduct('Wallpack')">{{ "Learn more" | translate }} ></a>
         <img src="/assets/images/home-img/pic-wallpack.png" />
       </div>
       <div class="product-wrapper-two">
@@ -35,7 +35,9 @@
             "Larix Lighting presented representative Flood lighting" | translate
           }}
         </p>
-        <a href="">{{ "Learn more" | translate }} ></a>
+        <a (click)="toProduct('Flood lighting')"
+          >{{ "Learn more" | translate }} ></a
+        >
         <img src="/assets/images/home-img/pic-floodlighting.png" />
       </div>
     </div>
