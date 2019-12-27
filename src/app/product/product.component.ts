@@ -165,18 +165,20 @@ export class ProductComponent implements OnInit {
         }
       }
       this.categorys = this.formatCategory(this.treeResult, this.lang);
-      // this.activatedRoute.queryParams.subscribe(params => {
-      //   if (params["category"] && !this.isFirstRouteByCategory) {
-      //     this.category = this.findCategoryByName(params["category"]);
-      //     this.isFirstRouteByCategory = true;
-      //     if (this.categoryTree) {
-      //       this.categoryTree.select(
-      //         this.categoryTree.selectedKey,
-      //         this.categoryTree.categoryType
-      //       );
-      //     }
-      //   }
-      // });
+      this.activatedRoute.queryParams.subscribe(params => {
+        if (params["category"]) {
+          this.category = this.findCategoryByName(params["category"]);
+          console.log("params", this.category);
+          this.categoryTree.selectedKey = this.category;
+          this.categoryTree.categoryType = "group";
+          if (this.categoryTree) {
+            this.categoryTree.select(
+              this.categoryTree.selectedKey,
+              this.categoryTree.categoryType
+            );
+          }
+        }
+      });
     });
   }
 
