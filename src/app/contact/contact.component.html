@@ -3,28 +3,32 @@
   <div class="contact-content">
     <div class="contact-info-content">
       <div class="contact-info-details">
-        <div class="title-Tel">
-          <p><span>{{'Tel:' | translate}}</span> +86-21-6280-5015</p>
-        </div>
-        <div class="title-Email">
-          <p><span>{{'Email:' | translate}}</span>sales@larixlighting.com</p>
-        </div>
         <div class="title-HoursOfOperation">
           <p>
             <span>{{'Hours of Operation:' | translate}}</span> 09:00-18:00 <br />
             ({{'Monday - Friday' | translate}})
           </p>
         </div>
+        <div class="title-Tel">
+          <p><span>{{'Tel:' | translate}}</span> +855 88 886 3888</p>
+        </div>
+        <div class="title-Email">
+          <p><span>{{'Email:' | translate}}</span>sales@larixlighting.com</p>
+        </div>
+        
         <div class="title-Address">
           <p>
-            <span>{{'Address:' | translate}}</span> {{'Room 204, Block A, No. 303,' | translate}}<br />
+            <span>{{'Address:' | translate}}</span> 
+            {{'National Road No.4, Svay Chrum, Beckchan Commune, Angsnoul District, Kandal Province, NR4, Phnom Penh, Cambodia' | translate}}
+          
+            <!-- {{'Room 204, Block A, No. 303,' | translate}}<br />
             {{'Shangzhong Road, Xuhui District, Shanghai,' | translate}}<br />
-            {{'China' | translate}}
+            {{'China' | translate}} -->
           </p>
         </div>
       </div>
       <div class="contact-map">
-        <a href="https://goo.gl/maps/fw2kbuL7oyzoRUZb8"
+        <a href="https://goo.gl/maps/rrEYdd3ei8tY2UHf6"
           ><img src="/assets/images/contact-img/Google-map site.jpg"
         /></a>
       </div>
@@ -57,7 +61,7 @@
           </div>
           <div class="row-group">
             <div class="input-group-item">
-              <p>{{'E-mail address *' | translate}}</p>
+              <p>{{'E-mail *' | translate}}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.email"
@@ -65,7 +69,7 @@
               />
             </div>
             <div class="input-group-item">
-              <p>{{'Telephone number *' | translate}}</p>
+              <p>{{'Phone *' | translate}}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.telephone"
