@@ -39,7 +39,7 @@
         <form class="contact-form-inputs">
           <div class="row-group">
             <div class="input-group-item">
-              <p>First Name *</p>
+              <p>{{'First Name *' | translate}}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.firstName"
@@ -47,7 +47,7 @@
               />
             </div>
             <div class="input-group-item">
-              <p>Last Name *</p>
+              <p>{{'Last Name *' | translate}}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.lastName"
@@ -57,7 +57,7 @@
           </div>
           <div class="row-group">
             <div class="input-group-item">
-              <p>E-mail address *</p>
+              <p>{{'E-mail address *' | translate}}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.email"
@@ -65,7 +65,7 @@
               />
             </div>
             <div class="input-group-item">
-              <p>Telephone number *</p>
+              <p>{{'Telephone number *' | translate}}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.telephone"
@@ -75,7 +75,7 @@
           </div>
           <div class="row-group">
             <div class="input-group-item">
-              <p>Company</p>
+              <p>{{'Company' | translate}}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.company"
@@ -83,7 +83,7 @@
               />
             </div>
             <div class="input-group-item">
-              <p>Position</p>
+              <p>{{'Position' | translate}}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.position"
@@ -92,7 +92,7 @@
             </div>
           </div>
           <div class="input-group-item">
-            <p>Comments *</p>
+            <p>{{'Comments *' | translate}}</p>
             <textarea
               rows="10"
               cols="30"
@@ -102,7 +102,7 @@
             </textarea>
           </div>
           <div class="contact-submit-button">
-            <button type="button" (click)="contact()">Contact Us</button>
+            <button type="button" (click)="contact()">{{'Contact Us' | translate}}</button>
           </div>
         </form>
       </div>
