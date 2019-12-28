@@ -1,6 +1,6 @@
 <div class="detail-header">
   <span (click)="back()">
-    <i nz-icon nzType="left" nzTheme="outline"></i>{{'return' | translate}}
+    <i nz-icon nzType="left" nzTheme="outline"></i>{{ "return" | translate }}
   </span>
 </div>
 <div class="detail-wrapper">
@@ -10,42 +10,42 @@
       <img src="{{ productInfo.pictures.product }}" />
     </div>
     <div class="product-params">
-      <p class="sub-header">{{'Specifications' | translate}}</p>
+      <p class="sub-header">{{ "Specifications" | translate }}</p>
       <div class="scroll-table">
-      <div class="params-list">
-        <div
-          *ngFor="let paramName of keysOf(PARAMS)"
-          [ngStyle]="{
-            height: 31 * PARAMS[paramName].count + 'px'
-          }"
-        >
-          <div class="name">
-            {{ paramName }}
-          </div>
-          <div class="inputs" *ngIf="productInfo.params[langType]">
-            <span
-              *ngFor="
-                let item of productInfo.params[langType][paramName];
-                let i = index;
-                trackBy: identifyFun
-              "
-              >{{ productInfo.params[langType][paramName][i] }}</span
-            >
+        <div class="params-list">
+          <div
+            *ngFor="let paramName of keysOf(PARAMS)"
+            [ngStyle]="{
+              height: 31 * PARAMS[paramName].count + 'px'
+            }"
+          >
+            <div class="name">
+              {{ paramName | translate }}
+            </div>
+            <div class="inputs" *ngIf="productInfo.params[langType]">
+              <span
+                *ngFor="
+                  let item of productInfo.params[langType][paramName];
+                  let i = index;
+                  trackBy: identifyFun
+                "
+                >{{ productInfo.params[langType][paramName][i] }}</span
+              >
+            </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
   </div>
   <div class="right">
     <div class="dimensions">
-      <p class="sub-header">{{'Dimensions' | translate}}</p>
+      <p class="sub-header">{{ "Dimensions" | translate }}</p>
       <div>
         <img src="{{ productInfo.pictures.dimensions }}" />
       </div>
     </div>
     <div class="photometric">
-      <p class="sub-header">{{'Photometric data' | translate}}</p>
+      <p class="sub-header">{{ "Photometric data" | translate }}</p>
       <div>
         <img src="{{ productInfo.pictures.photometric1 }}" />
         <img src="{{ productInfo.pictures.photometric2 }}" />
