@@ -7,11 +7,11 @@
     </div>
     <div class="news-info">
       <div class="title">
-        <p>{{ newsInfo.title }}</p>
-        <p>{{ formatTimestamp(newsInfo.createTime) }}</p>
+        <p>{{ newsInfo?.title }}</p>
+        <p>{{ formatTimestamp(newsInfo?.createTime) }}</p>
       </div>
       <div class="content">
-        <div [innerHtml]="newsInfo.content"></div>
+        <div [innerHtml]="newsInfo?.content"></div>
       </div>
     </div>
     <div class="related" *ngIf="relatedNews && relatedNews.length">
