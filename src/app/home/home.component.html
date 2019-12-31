@@ -4,9 +4,9 @@
       <div class="photos play" id="images">
         <img src="/assets/images/home-img/home-banner-01.jpg" />
         <img src="/assets/images/home-img/home-banner-02.jpg" />
-        <img src="/assets/images/home-img/home-banner-03.png" />
+        <!-- <img src="/assets/images/home-img/home-banner-03.png" />
         <img src="/assets/images/home-img/home-banner-04.png" />
-        <img src="/assets/images/home-img/home-banner-05.png" />
+        <img src="/assets/images/home-img/home-banner-05.png" /> -->
         <img src="/assets/images/home-img/home-banner-01.jpg" />
       </div>
       <!-- <div class="radio">
@@ -50,7 +50,10 @@
     <div class="home-text-info">
       <p>{{ "Our Company" | translate }}</p>
       <p>
-        {{"Larix Lighting has been committed to design and manufacture of market-oriented LED outdoor lighting products,from commercial to residential to industrial markets. We look forward to building long-term partnership with customers globally!" | translate }}
+        {{
+          "Larix Lighting has been committed to design and manufacture of market-oriented LED outdoor lighting products,from commercial to residential to industrial markets. We look forward to building long-term partnership with customers globally!"
+            | translate
+        }}
       </p>
     </div>
     <div class="divide-line"></div>
@@ -80,7 +83,10 @@
         <div class="title-Address">
           <p>
             <span>{{ "Address:" | translate }}</span> <br />
-            {{'National Road No.4, Svay Chrum, Beckchan Commune, Angsnoul District, Kandal Province, NR4, Phnom Penh, Cambodia' | translate}}
+            {{
+              "National Road No.4, Svay Chrum, Beckchan Commune, Angsnoul District, Kandal Province, NR4, Phnom Penh, Cambodia"
+                | translate
+            }}
             <!-- <br />{{
               "Room 204, Block A, No. 303," | translate
             }}<br />
@@ -93,7 +99,10 @@
     <div class="home-contact-us">
       <p>{{ "Our Philosophy" | translate }}</p>
       <p>
-        {{"high quality  cost-efficient products and OEM/ODM solutions" | translate}}
+        {{
+          "high quality  cost-efficient products and OEM/ODM solutions"
+            | translate
+        }}
       </p>
       <button type="button" (click)="isVisible = true">
         {{ "Contact Us" | translate }}

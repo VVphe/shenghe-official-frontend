@@ -14,43 +14,58 @@
         animation-play-state: paused !important;
       }
       &.play {
-        animation: leftMove 30s ease-in-out infinite;
+        animation: leftMove 10s ease-in-out infinite;
         // animation-delay: 5s;
       }
       @keyframes leftMove {
         0% {
           margin-left: 0px;
         }
-        15% {
+        5% {
+          margin-left: 0px;
+        }
+        45% {
           margin-left: calc(-100%);
         }
-        20% {
+        50% {
           margin-left: calc(-100%);
-        }
-        35% {
-          margin-left: calc(-100% * 2);
-        }
-        40% {
-          margin-left: calc(-100% * 2);
-        }
-        55% {
-          margin-left: calc(-100% * 3);
-        }
-        60% {
-          margin-left: calc(-100% * 3);
-        }
-        75% {
-          margin-left: calc(-100% * 4);
-        }
-        80% {
-          margin-left: calc(-100% * 4);
         }
         95% {
-          margin-left: calc(-100% * 5);
+          margin-left: calc(-100% * 2);
         }
         100% {
-          margin-left: calc(-100% * 5);
+          margin-left: calc(-100% * 2);
         }
+        // 15% {
+        //   margin-left: calc(-100%);
+        // }
+        // 20% {
+        //   margin-left: calc(-100%);
+        // }
+        // 35% {
+        //   margin-left: calc(-100% * 2);
+        // }
+        // 40% {
+        //   margin-left: calc(-100% * 2);
+        // }
+        // 55% {
+        //   margin-left: calc(-100% * 3);
+        // }
+        // 60% {
+        //   margin-left: calc(-100% * 3);
+        // }
+        // 75% {
+        //   margin-left: calc(-100% * 4);
+        // }
+        // 80% {
+        //   margin-left: calc(-100% * 4);
+        // }
+        // 95% {
+        //   margin-left: calc(-100% * 5);
+        // }
+        // 100% {
+        //   margin-left: calc(-100% * 5);
+        // }
       }
     }
     .radio {
