@@ -12,7 +12,11 @@ import {
   HttpClient
 } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { registerLocaleData } from "@angular/common";
+import {
+  registerLocaleData,
+  LocationStrategy,
+  HashLocationStrategy
+} from "@angular/common";
 import zh from "@angular/common/locales/zh";
 import { HomeModule } from "./home/home.module";
 import { ContactModule } from "./contact/contact.module";
@@ -52,7 +56,8 @@ registerLocaleData(zh);
       provide: HTTP_INTERCEPTORS,
       useClass: DefaultInjectorService,
       multi: true
-    }
+    },
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })

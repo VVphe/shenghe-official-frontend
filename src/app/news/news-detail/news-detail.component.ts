@@ -11,7 +11,7 @@ import { LanguageService } from "src/app/shared/language.service";
 })
 export class NewsDetailComponent implements OnInit {
   newsId: string;
-  newsInfo = {};
+  newsInfo: any;
   relatedNews = [];
 
   currentLang = "English";

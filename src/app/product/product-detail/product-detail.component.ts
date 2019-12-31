@@ -15,7 +15,14 @@ export class ProductDetailComponent implements OnInit {
   productInfo = {
     name: {},
     params: {},
-    pictures: {}
+    pictures: {
+      product: "",
+      dimensions: "",
+      photometric1: "",
+      photometric2: "",
+      brand: "",
+      realShooting: ""
+    }
   };
 
   productId: string;
