@@ -7,7 +7,8 @@ import {
   NzSliderModule,
   NzToolTipModule,
   NzPaginationModule,
-  NzModalModule
+  NzModalModule,
+  NzCarouselModule
 } from "ng-zorro-antd";
 import { HttpClientModule } from "@angular/common/http";
 import { NzTabsModule } from "ng-zorro-antd/tabs";
@@ -27,7 +28,8 @@ const SHARED_MODULES = [
   NzPaginationModule,
   NzTabsModule,
   NzModalModule,
-  TranslateModule
+  TranslateModule,
+  NzCarouselModule
 ];
 
 @NgModule({

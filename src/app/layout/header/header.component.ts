@@ -37,6 +37,10 @@ export class HeaderComponent implements OnInit {
       if (params["query"]) {
         this.showSearch = true;
         this.searchValue = params["query"];
+        // this.router.navigate(["."], {
+        //   relativeTo: this.activatedRoute,
+        //   queryParams: { query: null }
+        // });
       }
     });
   }

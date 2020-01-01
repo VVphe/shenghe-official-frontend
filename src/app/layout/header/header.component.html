@@ -38,7 +38,7 @@
       <i
         class="search"
         nz-icon
-        nzType="search"
+        [nzType]="showSearch ? 'close' : 'search'"
         nzTheme="outline"
         (click)="toggleSearch()"
       ></i>
