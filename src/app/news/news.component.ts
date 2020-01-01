@@ -12,6 +12,7 @@ import { LanguageService } from "../shared/language.service";
 export class NewsComponent implements OnInit {
   categorys = CATEGORYS;
 
+  query = "";
   currentCategory = "all";
   pageIndex = 1;
   pageSize = 10;
@@ -30,14 +31,23 @@ export class NewsComponent implements OnInit {
 
   ngOnInit() {
     this.currentLang = this.languageService.getCurrentLang();
-    this.activatedRoute.queryParams.subscribe(params => {
-      if (params["category"]) {
-        this.currentCategory = params["category"];
-      }
-      if (params["pageIndex"]) {
-        this.pageIndex = params["pageIndex"];
-      }
-      this.getNewsList();
+    this.router.navigate([], { queryParams: { query: null } }).then(() => {
+      this.activatedRoute.queryParams.subscribe(params => {
+        if (params["category"]) {
+          this.currentCategory = params["category"];
+        }
+        if (params["pageIndex"]) {
+          this.pageIndex = params["pageIndex"];
+        }
+        if (params["query"]) {
+          this.query = params["query"];
+          this.currentCategory = "all";
+          this.pageIndex = 1;
+        } else {
+          this.query = "";
+        }
+        this.getNewsList();
+      });
     });
 
     const langSwitchCb = lang => {
@@ -61,6 +71,9 @@ export class NewsComponent implements OnInit {
     };
     if (this.currentCategory && this.currentCategory !== "all") {
       Object.assign(params, { category: this.currentCategory });
+    }
+    if (this.query) {
+      Object.assign(params, { query: this.query });
     }
     this.newsService.getNewsList(params).subscribe((result: any) => {
       this.total = result.total;

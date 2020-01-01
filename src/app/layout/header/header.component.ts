@@ -30,18 +30,22 @@ export class HeaderComponent implements OnInit {
     return this.deviceService.isMobile;
   }
 
+  get canSearch() {
+    return (
+      this.router.url.split("?")[0] === "/products" ||
+      this.router.url.split("?")[0] === "/news"
+    );
+  }
+
   ngOnInit() {
     this.menus = MENUS;
     this.language = this.languages[0];
+    console.log(this.activatedRoute);
     this.activatedRoute.queryParams.subscribe(params => {
-      if (params["query"]) {
-        this.showSearch = true;
-        this.searchValue = params["query"];
-        // this.router.navigate(["."], {
-        //   relativeTo: this.activatedRoute,
-        //   queryParams: { query: null }
-        // });
-      }
+      // if (params["query"]) {
+      //   this.showSearch = true;
+      //   this.searchValue = params["query"];
+      // }
     });
   }
 
@@ -51,11 +55,19 @@ export class HeaderComponent implements OnInit {
 
   handleSearch(event: KeyboardEvent) {
     if (event.keyCode === 13) {
-      this.router.navigate(["/products"], {
-        queryParams: {
-          query: this.searchValue
-        }
-      });
+      if (this.router.url.split("?")[0] === "/products") {
+        this.router.navigate(["/products"], {
+          queryParams: {
+            query: this.searchValue
+          }
+        });
+      } else if (this.router.url.split("?")[0] === "/news") {
+        this.router.navigate(["/news"], {
+          queryParams: {
+            query: this.searchValue
+          }
+        });
+      }
     }
   }
 
