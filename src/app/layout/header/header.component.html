@@ -34,11 +34,11 @@
       </ng-container>
     </div>
 
-    <div class="search-wrapper">
+    <div class="search-wrapper" [hidden]="!canSearch">
       <i
         class="search"
         nz-icon
-        nzType="search"
+        [nzType]="showSearch ? 'close' : 'search'"
         nzTheme="outline"
         (click)="toggleSearch()"
       ></i>
