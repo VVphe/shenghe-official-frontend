@@ -8,7 +8,7 @@
     />
   </div>
   <div class="menu-wrapper">
-    <div *ngIf="!showSearch">
+    <div *ngIf="!showSearch || !canSearch">
       <ng-container *ngFor="let menu of menus">
         <a
           class="menu {{ menu.label }}"
