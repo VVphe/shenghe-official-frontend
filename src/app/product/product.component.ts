@@ -77,11 +77,13 @@ export class ProductComponent implements OnInit {
         this.activatedRoute.queryParams.subscribe(params => {
           if (params["query"]) {
             this.query = params["query"];
+            this.category = "all";
+            this.categoryType = "all";
           } else {
             this.query = "";
           }
-          this.category = "all";
-          this.categoryType = "all";
+          // this.category = "all";
+          // this.categoryType = "all";
           this.getProductList(true, true).then(() => {
             if (!this.categorys || !this.categorys.length) {
               this.getCategorys();

@@ -31,10 +31,17 @@ export class HeaderComponent implements OnInit {
   }
 
   get canSearch() {
-    return (
+    const result =
       this.router.url.split("?")[0] === "/products" ||
-      this.router.url.split("?")[0] === "/news"
-    );
+      this.router.url.split("?")[0] === "/news";
+    const isDetail =
+      this.router.url.split("?")[0].startsWith("/products") ||
+      this.router.url.split("?")[0].startsWith("/news");
+    if (!result && !isDetail) {
+      this.showSearch = false;
+      this.searchValue = "";
+    }
+    return result;
   }
 
   ngOnInit() {

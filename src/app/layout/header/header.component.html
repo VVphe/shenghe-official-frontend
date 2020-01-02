@@ -34,7 +34,7 @@
       </ng-container>
     </div>
 
-    <div class="search-wrapper" [hidden]="!canSearch">
+    <div class="search-wrapper" *ngIf="canSearch">
       <i
         class="search"
         nz-icon
