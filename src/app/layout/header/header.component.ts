@@ -58,10 +58,14 @@ export class HeaderComponent implements OnInit {
 
   toggleSearch() {
     this.showSearch = !this.showSearch;
+    if (!this.showSearch) {
+      this.searchValue = "";
+      this.handleSearch(null, true);
+    }
   }
 
-  handleSearch(event: KeyboardEvent) {
-    if (event.keyCode === 13) {
+  handleSearch(event: KeyboardEvent, clear = false) {
+    if ((event && event.keyCode === 13) || clear) {
       if (this.router.url.split("?")[0] === "/products") {
         this.router.navigate(["/products"], {
           queryParams: {
