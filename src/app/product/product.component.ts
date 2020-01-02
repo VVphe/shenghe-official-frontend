@@ -70,28 +70,31 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     this.lang = this.languageService.getCurrentLang();
-    this.router.navigate([], { queryParams: { query: null } }).then(() => {
-      this.activatedRoute.queryParams.subscribe(params => {
-        if (params["query"]) {
-          this.query = params["query"];
-        } else {
-          this.query = "";
-        }
-        this.category = "all";
-        this.categoryType = "all";
-        this.getProductList(true, true).then(() => {
-          if (!this.categorys || !this.categorys.length) {
-            this.getCategorys();
+    const queryParams = this.activatedRoute.snapshot.queryParams;
+    this.router
+      .navigate([], { queryParams: { ...queryParams, query: null } })
+      .then(() => {
+        this.activatedRoute.queryParams.subscribe(params => {
+          if (params["query"]) {
+            this.query = params["query"];
+          } else {
+            this.query = "";
           }
-          if (this.categoryTree) {
-            this.categoryTree.select(
-              this.categoryTree.selectedKey,
-              this.categoryTree.categoryType
-            );
-          }
+          this.category = "all";
+          this.categoryType = "all";
+          this.getProductList(true, true).then(() => {
+            if (!this.categorys || !this.categorys.length) {
+              this.getCategorys();
+            }
+            if (this.categoryTree) {
+              this.categoryTree.select(
+                this.categoryTree.selectedKey,
+                this.categoryTree.categoryType
+              );
+            }
+          });
         });
       });
-    });
     // this.activatedRoute.queryParams.subscribe(params => {
     //   if (params["query"]) {
     //     this.query = params["query"];
