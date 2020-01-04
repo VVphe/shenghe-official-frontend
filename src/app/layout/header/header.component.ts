@@ -31,10 +31,17 @@ export class HeaderComponent implements OnInit {
   }
 
   get canSearch() {
-    return (
+    const result =
       this.router.url.split("?")[0] === "/products" ||
-      this.router.url.split("?")[0] === "/news"
-    );
+      this.router.url.split("?")[0] === "/news";
+    const isDetail =
+      this.router.url.split("?")[0].startsWith("/products") ||
+      this.router.url.split("?")[0].startsWith("/news");
+    if (!result && !isDetail) {
+      this.showSearch = false;
+      this.searchValue = "";
+    }
+    return result;
   }
 
   ngOnInit() {
@@ -51,10 +58,14 @@ export class HeaderComponent implements OnInit {
 
   toggleSearch() {
     this.showSearch = !this.showSearch;
+    if (!this.showSearch) {
+      this.searchValue = "";
+      this.handleSearch(null, true);
+    }
   }
 
-  handleSearch(event: KeyboardEvent) {
-    if (event.keyCode === 13) {
+  handleSearch(event: KeyboardEvent, clear = false) {
+    if ((event && event.keyCode === 13) || clear) {
       if (this.router.url.split("?")[0] === "/products") {
         this.router.navigate(["/products"], {
           queryParams: {
