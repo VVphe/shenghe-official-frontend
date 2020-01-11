@@ -10,6 +10,7 @@ import {
   NzModalModule,
   NzCarouselModule
 } from "ng-zorro-antd";
+import { NzCollapseModule } from "ng-zorro-antd/collapse";
 import { HttpClientModule } from "@angular/common/http";
 import { NzTabsModule } from "ng-zorro-antd/tabs";
 import { TranslateModule } from "@ngx-translate/core";
@@ -29,7 +30,8 @@ const SHARED_MODULES = [
   NzTabsModule,
   NzModalModule,
   TranslateModule,
-  NzCarouselModule
+  NzCarouselModule,
+  NzCollapseModule
 ];
 
 @NgModule({

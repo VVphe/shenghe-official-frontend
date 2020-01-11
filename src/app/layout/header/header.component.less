@@ -174,3 +174,30 @@
     }
   }
 }
+
+.mobile-menu {
+  position: fixed;
+  width: 100%;
+  height: calc(~"100vh - 48px");
+  background-color: #fff;
+  top: 48px;
+  .mobile-search {
+    padding: 12px 20px 8px;
+    ::ng-deep {
+      .ant-input {
+        height: 40px;
+        background-color: rgba(244, 245, 247, 1);
+        border: none;
+        font-size: 18px;
+        &:focus {
+          border: none;
+          box-shadow: none;
+        }
+      }
+      .ant-input-suffix {
+        font-size: 18px;
+        color: #000;
+      }
+    }
+  }
+}
