@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { DeviceService } from "../shared/device.service";
 
 @Component({
   selector: "app-home",
@@ -9,7 +10,11 @@ import { Router } from "@angular/router";
 export class HomeComponent implements OnInit {
   isVisible = false;
 
-  constructor(private router: Router) {}
+  get isMobile() {
+    return this.deviceService.isMobile;
+  }
+
+  constructor(private router: Router, private deviceService: DeviceService) {}
 
   ngOnInit() {}
 
