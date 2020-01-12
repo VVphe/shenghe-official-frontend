@@ -7,10 +7,10 @@ export const MENUS = [
     label: "Products",
     link: "/products"
   },
-  {
-    label: "Services",
-    link: ""
-  },
+  // {
+  //   label: "Services",
+  //   link: ""
+  // },
   {
     label: "News",
     link: "/news"
