@@ -180,6 +180,7 @@
   width: 100%;
   height: calc(~"100vh - 48px");
   background-color: #fff;
+  z-index: 999;
   top: 48px;
   .mobile-search {
     padding: 12px 20px 8px;
@@ -198,6 +199,74 @@
         font-size: 18px;
         color: #000;
       }
+    }
+  }
+  .mobile-menu-group {
+    .mobile-menu-item {
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.87);
+      padding: 10px 0 10px 20px;
+      box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+    }
+    ::ng-deep {
+      nz-collapse {
+        box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+        .ant-collapse {
+          border: none;
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+          background-color: #fff;
+        }
+        .ant-collapse > .ant-collapse-item {
+          border: none;
+        }
+        .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+          padding: 10px 20px;
+          line-height: 20px;
+        }
+        .ant-collapse
+          > .ant-collapse-item
+          > .ant-collapse-header
+          .ant-collapse-arrow {
+          right: 20px;
+          left: auto;
+        }
+        .sub-product-item {
+          padding: 10px 0 10px 40px;
+          font-weight: 400;
+          color: rgba(0, 0, 0, 0.87);
+          &:not(:last-child) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          }
+        }
+        .ant-collapse-content > .ant-collapse-content-box {
+          padding: 0;
+        }
+      }
+    }
+  }
+  .mobild-lang-switch {
+    padding: 27px 0 27px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    img {
+      width: 28px;
+      height: 28px;
+      margin-right: 8px;
+    }
+    span {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.87);
+    }
+    i {
+      margin-left: 8px;
+    }
+  }
+}
+@media (max-width: 767.98px) {
+  ::ng-deep {
+    .cdk-overlay-container {
+      z-index: 1001;
     }
   }
 }
