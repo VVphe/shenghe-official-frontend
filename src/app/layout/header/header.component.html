@@ -1,62 +1,85 @@
 <div class="header" *ngIf="!isMobile">
+  
   <div class="logo">
     <img
       class="logo"
-      src="/assets/images/Larix-Logo.png"
+      src="/assets/images/shenghe-logo.png"
       [routerLink]="['/home']"
       routerLinkActive="router-link-active"
     />
   </div>
-  <div class="menu-wrapper">
-    <div *ngIf="!showSearch || !canSearch">
-      <ng-container *ngFor="let menu of menus">
-        <a
-          class="menu {{ menu.label }}"
-          [routerLink]="[menu.link]"
-          routerLinkActive="router-link-active"
-          >{{ menu.label | translate }}</a
-        >
-        <div class="hover-extend" *ngIf="menu.label == 'Products'">
-          <div class="hover-product">
-            <div>
-              <p>{{ "Outdoor" | translate }}</p>
-              <div (click)="switchProduct('Wallpack')">
-                <img src="/assets/images/Wallpack.png" />
-                <p>{{ "Wallpack" | translate }}</p>
-              </div>
-              <div (click)="switchProduct('Flood lighting')">
-                <img src="/assets/images/Flood lighting.png" />
-                <p>{{ "Flood lighting" | translate }}</p>
-              </div>
+  <div *ngIf="!showSearch || !canSearch">
+    <ng-container *ngFor="let menu of menus">
+      <a
+        class="menu {{ menu.label }}"
+        [routerLink]="[menu.link]"
+        routerLinkActive="router-link-active"
+        >{{ menu.label | translate }}</a
+      >
+      <div class="hover-extend" *ngIf="menu.label == 'Products'">
+        <div class="hover-product">
+          <div>
+            <p>{{ "Outdoor" | translate }}</p>
+            <div (click)="switchProduct('Wallpack')">
+              <img src="/assets/images/home-img/home-product-06.jpg" />
+              <p>{{ "LED FLood Light" | translate }}</p>
+            </div>
+            <div (click)="switchProduct('Flood lighting')">
+              <img src="/assets/images/home-img/home-product-02.png" />
+              <p>{{ "Garden Light" | translate }}</p>
+            </div>
+          </div>
+          <div>
+            <p>{{ "Indoor" | translate }}</p>
+            <div (click)="switchProduct('Wallpack')">
+              <img src="/assets/images/home-img/home-product-05.png" />
+              <p>{{ "LED High Bay Light" | translate }}</p>
+            </div>
+            <div (click)="switchProduct('Flood lighting')">
+              <img src="/assets/images/home-img/home-product-01.png" />
+              <p>{{ "LED Flat Panel" | translate }}</p>
+            </div>
+            <div (click)="switchProduct('Flood lighting')">
+              <img src="/assets/images/home-img/home-product-04.JPG" />
+              <p>{{ "LED Ceiling Light" | translate }}</p>
+            </div>
+            <div (click)="switchProduct('Flood lighting')">
+              <img src="/assets/images/home-img/home-product-03.png" />
+              <p>{{ " Wall Light" | translate }}</p>
             </div>
           </div>
         </div>
-      </ng-container>
-    </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="menu-wrapper">
+   
 
-    <div class="search-wrapper" *ngIf="canSearch">
-      <i
-        class="search"
-        nz-icon
-        [nzType]="showSearch ? 'close' : 'search'"
-        nzTheme="outline"
-        (click)="toggleSearch()"
-      ></i>
-      <input
-        class="search-input {{ showSearch ? 'show-search' : '' }}"
-        nz-input
-        [(ngModel)]="searchValue"
-        (keyup)="handleSearch($event)"
+    <div class="search-and-language-wrapper">
+      <div class="search-wrapper" *ngIf="canSearch">
+        <i
+          class="search"
+          nz-icon
+          [nzType]="showSearch ? 'close' : 'search'"
+          nzTheme="outline"
+          (click)="toggleSearch()"
+        ></i>
+        <input
+          class="search-input {{ showSearch ? 'show-search' : '' }}"
+          nz-input
+          [(ngModel)]="searchValue"
+          (keyup)="handleSearch($event)"
+        />
+      </div>
+      <img
+        class="lang-switch"
+        [src]="language.icon"
+        nz-dropdown
+        [nzDropdownMenu]="menu"
+        [nzOverlayClassName]="'language-switch'"
+        nzTrigger="click"
       />
     </div>
-    <img
-      class="lang-switch"
-      [src]="language.icon"
-      nz-dropdown
-      [nzDropdownMenu]="menu"
-      [nzOverlayClassName]="'language-switch'"
-      nzTrigger="click"
-    />
   </div>
   <nz-dropdown-menu #menu="nzDropdownMenu">
     <ul nz-menu nzSelectable>
@@ -78,7 +101,7 @@
   <div class="logo">
     <img
       class="logo"
-      src="/assets/images/Larix-Logo.png"
+      src="/assets/images/shenghe-logo.png"
       [routerLink]="['/home']"
       routerLinkActive="router-link-active"
     />

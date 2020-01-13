@@ -1,18 +1,6 @@
 <div class="home-wrapper">
   <div class="carousel">
-    <!-- <div class="wrap">
-      <div class="photos play" id="images">
-        <img src="/assets/images/home-img/home-banner-01.jpg" />
-        <img src="/assets/images/home-img/home-banner-02.jpg" />
-        <img src="/assets/images/home-img/home-banner-01.jpg" />
-      </div> -->
-    <!-- <div class="radio">
-        <a id="a1" class="dot"></a>
-        <a id="a2" class="dot"></a>
-        <a id="a3" class="dot"></a>
-        <a id="a4" class="dot"></a>
-        <a id="a5" class="dot"></a>
-      </div> -->
+    
     <nz-carousel nzAutoPlay>
       <div nz-carousel-content>
         <img src="/assets/images/home-img/home-banner-01.jpg" />
@@ -20,158 +8,95 @@
       <div nz-carousel-content>
         <img src="/assets/images/home-img/home-banner-02.jpg" />
       </div>
+      <div nz-carousel-content>
+        <img src="/assets/images/home-img/home-banner-03.jpg" />
+      </div>
+      <div nz-carousel-content>
+        <img src="/assets/images/home-img/home-banner-04.jpg" />
+      </div>
     </nz-carousel>
   </div>
+
+  <div class="home-text-info">
+    <p>{{ "About Us" | translate }}</p>
+    <p>
+      {{
+        "We obtained SA8000 certification with strong technical development ability and rich development experience, advanced production and testing equipment and quality inspection assurance system. We always adhere to the market orientation of ‘customer first’ and the specific practice of ‘people-oriented’. We have provided OEM and ODM services for many premium lighting brands (e.g. RAB, iGuzzini) in European and American markets by growing together with customers."
+          | translate }}
+    </p>
+    <img src="/assets/images/home-img/home-aboutus-pic.png">
+  </div>
+
+  <div class="home-product-wrapper">
+    <p>{{ "Products" | translate }}</p>
+    <div class="home-product-container">
+        <div class="home-product-item">
+          <div class="product-pic">
+            <img src="/assets/images/home-img/home-product-01.png">
+          </div>
+          <p>LED Flat Panel</p>
+        </div>
+        <div class="home-product-item">
+          <div class="product-pic">
+            <img src="/assets/images/home-img/home-product-02.png">
+          </div>
+          <p>Garden Light</p>
+        </div>
+        <div class="home-product-item">
+          <div class="product-pic">
+            <img src="/assets/images/home-img/home-product-03.png">
+          </div>
+          <p>Wall Light</p>
+        </div>
+        <div class="home-product-item">
+          <div class="product-pic">
+            <img src="/assets/images/home-img/home-product-05.png">
+          </div>
+          <p>LED High Bay Light</p>
+        </div>
+    </div>
+    <a (click)="toNews">{{ "All Products >" | translate }} </a>
+    
+  </div>
+
   <div class="home-main-content">
-    <div class="product-entrance">
-      <div class="product-wrapper-one">
-        <p>{{ "Wallpack" | translate }}</p>
-        <p>
-          {{ "Larix Lighting presented representative Wallpack" | translate }}
-        </p>
-        <a (click)="toProduct('Wallpack')">{{ "Learn more" | translate }} ></a>
-        <img src="/assets/images/home-img/pic-wallpack.png" />
-      </div>
-      <div class="product-wrapper-two">
-        <p>{{ "Flood lighting" | translate }}</p>
-        <p>
-          {{
-            "Larix Lighting presented representative Flood lighting" | translate
-          }}
-        </p>
-        <a (click)="toProduct('Flood lighting')"
-          >{{ "Learn more" | translate }} ></a
-        >
-        <img src="/assets/images/home-img/pic-floodlighting.png" />
-      </div>
-    </div>
-    <div class="home-picture-group">
-      <img src="/assets/images/home-img/home-picture-01.png" />
-      <img src="/assets/images/home-img/home-picture-02.png" />
-      <img src="/assets/images/home-img/home-picture-03.png" />
-      <img src="/assets/images/home-img/home-picture-04.png" />
-    </div>
-    <div class="home-text-info">
-      <p>{{ "Our Company" | translate }}</p>
-      <p>
-        {{
-          "Larix Lighting has been committed to design and manufacture of market-oriented LED outdoor lighting products,from commercial to residential to industrial markets. We look forward to building long-term partnership with customers globally!"
-            | translate
-        }}
-      </p>
-    </div>
-    <div class="divide-line"></div>
 
-    <div class="home-contact-info">
-      <div class="contact-info-details">
-        <div class="title-Tel">
-          <p>
-            <span>{{ "Tel:" | translate }}</span
-            ><br />
-            +855 88 886 3888
-          </p>
-        </div>
-        <div class="title-Email">
-          <p>
-            <span>{{ "Email:" | translate }} </span
-            ><br />sales@larixlighting.com
-          </p>
-        </div>
-        <div class="title-HoursOfOperation">
-          <p>
-            <span>{{ "Hours of Operation:" | translate }}</span>
-            <br />09:00-18:00 <br />
-            ({{ "Monday - Friday" | translate }})
-          </p>
-        </div>
-        <div class="title-Address">
-          <p>
-            <span>{{ "Address:" | translate }}</span> <br />
-            {{
-              "National Road No.4, Svay Chrum, Beckchan Commune, Angsnoul District, Kandal Province, NR4, Phnom Penh, Cambodia"
-                | translate
-            }}
-            <!-- <br />{{
-              "Room 204, Block A, No. 303," | translate
-            }}<br />
-            {{ "Shangzhong Road, Xuhui District, Shanghai," | translate }}<br />
-            {{ "China" | translate }} -->
-          </p>
-        </div>
+    <div class="home-news-info">
+      <p class="home-title-news">{{ "News" | translate }}</p>
+      <div class="news-group">
+          <div class="single-news-item">
+            <a class="news-item-pic">
+              <img src="/assets/images/home-img/home-news-pic.png"> 
+            </a>
+            <p>Great News！Wonderful News！</p>
+            <p>2019.12.31</p>
+          </div>
+          <div class="single-news-item">
+            <a class="news-item-pic">
+              <img src="/assets/images/home-img/home-news-pic.png"> 
+            </a>
+            <p>Great News！Wonderful News！</p>
+            <p>2019.12.31</p>
+          </div>
+          <div class="single-news-item">
+            <a class="news-item-pic">
+              <img src="/assets/images/home-img/home-news-pic.png"> 
+            </a>
+            <p>Great News！Wonderful News！</p>
+            <p>2019.12.31</p>
+          </div>
+          <div class="single-news-item">
+            <a class="news-item-pic">
+              <img src="/assets/images/home-img/home-news-pic.png"> 
+            </a>
+            <p>Great News！Wonderful News！</p>
+            <p>2019.12.31</p>
+          </div>
       </div>
-    </div>
-    <div class="home-contact-us">
-      <p>{{ "Our Philosophy" | translate }}</p>
-      <p>
-        {{
-          "High quality cost-efficient products and OEM and ODM solutions"
-            | translate
-        }}
-      </p>
-      <button type="button" (click)="isVisible = true">
-        {{ "Contact Us" | translate }}
-      </button>
+      <a class="more-news" (click)="toNews">{{ "More News >" | translate }} </a>
     </div>
 
-    <!-- --------原内容-------- -->
-    <!-- <div class="product-entrance">
-          <div class="product-wrapper-one">
-              <p>Wallpack</p>
-              <p>Larix Lighting presented representative Wallpack</p>
-              <a href="">learn more ></a>
-              <img src="/assets/images/home-img/pic-wallpack.png">
-          </div>
-          <div class="product-wrapper-two">
-              <p>Flood lighting</p>
-              <p>Larix Lighting presented representative Flood lighting</p>
-              <a href="">learn more ></a>
-              <img src="/assets/images/home-img/pic-floodlighting.png">
-          </div>
-
-        </div>
-        <div class="home-picture-group">
-          <img src="/assets/images/home-img/home-picture-01.png">
-          <img src="/assets/images/home-img/home-picture-02.png">
-          <img src="/assets/images/home-img/home-picture-03.png">
-          <img src="/assets/images/home-img/home-picture-04.png">
-        </div>
-        <div class="home-text-info">
-          <p>Our Company</p>
-          <p>Larix Lighting has been
-             committed to design and manufacture of customer-centric outdoor LED lighting products to industrial,
-              commercial, residential and OEM markets. We look forward to building long-term partnership with customers globally!</p>
-        </div>
-        <div class="divide-line"></div>
-
-        <div class="home-contact-info">
-          <div class="contact-info-details">
-          <div class="title-Tel">
-            <p><span>Tel:</span><br/> +86-21-6280-5015</p>
-          </div>
-          <div class="title-Email">
-            <p><span>Email:</span><br/>sales@larixlighting.com</p>
-          </div>
-          <div class="title-HoursOfOperation">
-            <p>
-              <span>Hours of Operation:</span> <br/>09:00-18:00<br />
-              (Monday - Friday)
-            </p>
-          </div>
-          <div class="title-Address">
-            <p>
-              <span>Address:</span> <br/>Room 204, Block A, No. 303,<br />
-              Shangzhong Road, Xuhui District, Shanghai,<br />
-              China
-            </p>
-          </div>
-        </div>
-        </div>
-      </div>
-        <div class="home-contact-us">
-          <p>Our Philosophy Our Slogan</p>
-          <p>high quality  cost-efficient products and OEM/ODM solutions</p>
-          <button type="button">Contact Us</button>
-        </div> -->
+   
   </div>
 </div>
 

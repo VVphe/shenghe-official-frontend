@@ -6,15 +6,27 @@ export const LANGUAGES = [
     lang: "English"
   },
   {
-    type: "Portuguese",
-    icon: "/assets/images/icon-language-portuguese.png",
-    config: "pt_PT",
-    lang: "Portuguese"
+    type: "Chinese",
+    icon: "/assets/images/icon-language-chinese.png",
+    config: "zh_CN",
+    lang: "Chinese"
   },
   {
-    type: "Spanish",
-    icon: "/assets/images/icon-language-spanish.png",
-    config: "es_ES",
-    lang: "Spanish"
+    type: "French",
+    icon: "/assets/images/ icon-language-french.png",
+    config: "fr_FR",
+    lang: "French"
+  },
+  {
+    type: "Arabic",
+    icon: "/assets/images/icon-language-arabic.png",
+    config: "ar_EG",
+    lang: "Arabic"
+  },
+  {
+    type: "Vietnamese",
+    icon: "/assets/images/icon-language-vietnamese.png",
+    config: "vi_VN",
+    lang: "Vietnamese"
   }
 ];
