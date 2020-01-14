@@ -1,5 +1,4 @@
 <div class="header" *ngIf="!isMobile">
-  
   <div class="logo">
     <img
       class="logo"
@@ -8,7 +7,7 @@
       routerLinkActive="router-link-active"
     />
   </div>
-  <div *ngIf="!showSearch || !canSearch">
+  <div *ngIf="!showSearch || !canSearch" class="shenghe-menu">
     <ng-container *ngFor="let menu of menus">
       <a
         class="menu {{ menu.label }}"
@@ -53,8 +52,6 @@
     </ng-container>
   </div>
   <div class="menu-wrapper">
-   
-
     <div class="search-and-language-wrapper">
       <div class="search-wrapper" *ngIf="canSearch">
         <i
