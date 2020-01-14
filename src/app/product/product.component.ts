@@ -164,9 +164,11 @@ export class ProductComponent implements OnInit {
     const langSwitchCb = lang => {
       this.lang =
         {
-          es_ES: "Spanish",
-          pt_PT: "Portuguese",
-          es_US: "English"
+          zh_CN: "Chinese",
+          fr_FR: "French",
+          es_US: "English",
+          ar_EG: "Arabic",
+          vi_VN: "Vietnamese"
         }[lang] || "English";
       this.getProductList(false, false);
       this.categorys = this.formatCategory(this.treeResult, this.lang);

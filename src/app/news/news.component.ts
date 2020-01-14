@@ -53,9 +53,11 @@ export class NewsComponent implements OnInit {
     const langSwitchCb = lang => {
       this.currentLang =
         {
-          es_ES: "Spanish",
-          pt_PT: "Portuguese",
-          es_US: "English"
+          zh_CN: "Chinese",
+          fr_FR: "French",
+          es_US: "English",
+          ar_EG: "Arabic",
+          vi_VN: "Vietnamese"
         }[lang] || "English";
       this.getNewsList();
     };

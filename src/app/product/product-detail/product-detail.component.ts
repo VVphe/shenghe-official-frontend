@@ -49,9 +49,11 @@ export class ProductDetailComponent implements OnInit {
     const langSwitchCb = lang => {
       this.langType =
         {
-          es_ES: "Spanish",
-          pt_PT: "Portuguese",
-          es_US: "English"
+          zh_CN: "Chinese",
+          fr_FR: "French",
+          es_US: "English",
+          ar_EG: "Arabic",
+          vi_VN: "Vietnamese"
         }[lang] || "English";
     };
 
@@ -63,15 +65,15 @@ export class ProductDetailComponent implements OnInit {
       this.productInfo = res.data;
       for (let i = 0; i < this.languages.length; i++) {
         this.productInfo.params[this.languages[i].lang][
-          "Power"
+          "Wattage"
         ] = this.filterAssembly(
-          this.productInfo.params[this.languages[i].lang]["Power"],
+          this.productInfo.params[this.languages[i].lang]["Wattage"],
           "decode"
         );
         this.productInfo.params[this.languages[i].lang][
-          "Luminous flux"
+          "Lumen (±10%)"
         ] = this.filterAssembly(
-          this.productInfo.params[this.languages[i].lang]["Luminous flux"],
+          this.productInfo.params[this.languages[i].lang]["Lumen (±10%)"],
           "decode"
         );
       }

@@ -32,9 +32,11 @@ export class LanguageService {
 
   getCurrentLang() {
     const langMap = {
-      es_ES: "Spanish",
-      pt_PT: "Portuguese",
-      es_US: "English"
+      zh_CN: "Chinese",
+      fr_FR: "French",
+      es_US: "English",
+      ar_EG: "Arabic",
+      vi_VN: "Vietnamese"
     };
     return langMap[this.translate.currentLang] || "English";
   }

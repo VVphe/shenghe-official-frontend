@@ -1,72 +1,89 @@
 export const productParams = {
-  Power: {
+  Brand: {
+    count: 1
+  },
+  "Part Number": {
+    count: 1
+  },
+  Portfolio: {
+    count: 1
+  },
+  "Input Voltage": {
+    count: 1
+  },
+  Wattage: {
     count: 1,
     filter: true
   },
-  "Luminous flux": {
+  "Lumen (±10%)": {
     count: 1,
     filter: true
   },
-  Efficacy: {
+  "Lamp's Lumen": {
     count: 1
   },
   CCT: {
     count: 1
   },
-  CRI: {
+  Ra: {
     count: 1
   },
-  "Ingress protection": {
+  "HID Equal": {
     count: 1
   },
-  "Input voltage": {
+  "Beam Angle": {
     count: 1
   },
-  "Power factor": {
+  "Dimmable & Contorl": {
     count: 1
   },
-  "Surge protection": {
+  Certification: {
     count: 1
   },
-  Dimming: {
+  "ERP Complied": {
     count: 1
   },
-  Distribution: {
+  "Housing Materials": {
     count: 1
   },
-  Dimension: {
-    count: 2
-  },
-  Construction: {
+  "Diffuser Material": {
     count: 1
   },
-  Finish: {
+  "Lens Type": {
     count: 1
   },
-  Lifetime: {
+  "Installation Method": {
+    count: 1
+  },
+  "Finish Color": {
+    count: 1
+  },
+  "Motion Sensor Included": {
+    count: 1
+  },
+  "Operating Temperature": {
+    count: 1
+  },
+  Environment: {
+    count: 1
+  },
+  "Rated Lifespan": {
     count: 1
   },
   Warranty: {
     count: 1
   },
-  "Ambient temperature": {
+  "Cut-out Size": {
     count: 1
   },
-  "Vibration level": {
+  "Product Length": {
     count: 1
   },
-  EPA: {
+  "Product Width": {
     count: 1
   },
-  Mounting: {
+  "Product Height": {
     count: 1
-  },
-  Controls: {
-    count: 3,
-    optional: true
-  },
-  Applications: {
-    count: 4
   }
 };
 
