@@ -19,6 +19,8 @@ export class HeaderComponent implements OnInit {
   showSearch = false;
   searchValue = "";
 
+  showMenu = false;
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -66,6 +68,7 @@ export class HeaderComponent implements OnInit {
 
   handleSearch(event: KeyboardEvent, clear = false) {
     if ((event && event.keyCode === 13) || clear) {
+      this.showMenu = false;
       if (this.router.url.split("?")[0] === "/products") {
         this.router.navigate(["/products"], {
           queryParams: {

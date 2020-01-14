@@ -94,13 +94,88 @@
   </nz-dropdown-menu>
 </div>
 <div class="mobile-header" *ngIf="isMobile">
-  <i class="menu" nz-icon nzType="menu" nzTheme="outline"></i>
+  <i
+    class="menu"
+    nz-icon
+    [nzType]="showMenu ? 'close' : 'menu'"
+    nzTheme="outline"
+    (click)="showMenu = !showMenu"
+  ></i>
   <div class="logo">
     <img
       class="logo"
       src="/assets/images/shenghe-logo.png"
       [routerLink]="['/home']"
       routerLinkActive="router-link-active"
+      (click)="showMenu = false"
     />
+  </div>
+  <div class="mobile-menu" *ngIf="showMenu">
+    <div class="mobile-search" *ngIf="canSearch">
+      <nz-input-group [nzSuffix]="suffixIconSearch">
+        <input
+          type="text"
+          nz-input
+          [(ngModel)]="searchValue"
+          (keyup)="handleSearch($event)"
+        />
+      </nz-input-group>
+      <ng-template #suffixIconSearch>
+        <i nz-icon nzType="search"></i>
+      </ng-template>
+    </div>
+    <div class="mobile-menu-group">
+      <ng-container *ngFor="let menu of menus">
+        <div
+          *ngIf="menu.label != 'Products'"
+          class="mobile-menu-item {{ menu.label }}"
+          [routerLink]="[menu.link]"
+          routerLinkActive="router-link-active"
+          (click)="showMenu = false"
+        >
+          {{ menu.label | translate }}
+        </div>
+        <nz-collapse *ngIf="menu.label == 'Products'">
+          <nz-collapse-panel [nzHeader]="menu.label">
+            <div
+              (click)="switchProduct('Wallpack'); showMenu = false"
+              class="sub-product-item"
+            >
+              {{ "Wallpack" | translate }}
+            </div>
+            <div
+              (click)="switchProduct('Flood lighting'); showMenu = false"
+              class="sub-product-item"
+            >
+              {{ "Flood lighting" | translate }}
+            </div>
+          </nz-collapse-panel>
+        </nz-collapse>
+      </ng-container>
+    </div>
+    <div
+      class="mobild-lang-switch"
+      nz-dropdown
+      [nzDropdownMenu]="menu"
+      nzTrigger="click"
+    >
+      <img [src]="language.icon" />
+      <span>{{ language.lang }}</span>
+      <i nz-icon nzType="down" nzTheme="outline"></i>
+    </div>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu nzSelectable>
+        <li
+          nz-menu-item
+          *ngFor="let lang of languages"
+          class="lang-li"
+          (click)="switchLanguage(lang)"
+        >
+          <img [src]="lang.icon" width="28px" height="28px" /><span>{{
+            lang.type
+          }}</span>
+        </li>
+      </ul>
+    </nz-dropdown-menu>
   </div>
 </div>
