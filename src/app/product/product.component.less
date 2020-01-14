@@ -55,6 +55,35 @@
     img {
       width: 100%;
       height: 100%;
+      &:hover {
+        width: 105%;
+        height: 105%;
+        @keyframes mymove {
+          from {
+            width: 100%;
+            height: 100%;
+          }
+          to {
+            width: 105%;
+            height: 105%;
+          }
+        }
+
+        @-webkit-keyframes mymove /* Safari and Chrome */ {
+          from {
+            width: 100%;
+            height: 100%;
+          }
+          to {
+            width: 105%;
+            height: 105%;
+          }
+        }
+        animation: mymove 0.5s;
+        // animation-timing-function: cubic-bezier(1, 0, 0, 1);
+        -webkit-animation: mymove 0.5s;
+        // -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);
+      }
     }
   }
 }
