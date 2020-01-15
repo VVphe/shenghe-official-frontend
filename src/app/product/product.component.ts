@@ -266,7 +266,7 @@ export class ProductComponent implements OnInit {
         //     ? this.calcCount(categorys[i].children)
         //     : categorys[i].count,
         parent: categorys[i].parent || null,
-        expanded: true,
+        expanded: false,
         children: this.formatCategory(categorys[i].children || [], lang)
       });
     }
