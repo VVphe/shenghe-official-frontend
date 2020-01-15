@@ -19,16 +19,10 @@ export const productParams = {
     count: 1,
     filter: true
   },
-  "Lamp's Lumen": {
-    count: 1
-  },
   CCT: {
     count: 1
   },
   Ra: {
-    count: 1
-  },
-  "HID Equal": {
     count: 1
   },
   "Beam Angle": {
@@ -71,18 +65,6 @@ export const productParams = {
     count: 1
   },
   Warranty: {
-    count: 1
-  },
-  "Cut-out Size": {
-    count: 1
-  },
-  "Product Length": {
-    count: 1
-  },
-  "Product Width": {
-    count: 1
-  },
-  "Product Height": {
     count: 1
   }
 };
