@@ -5,7 +5,7 @@
         <img
           [src]="
             isMobile
-              ? '/assets/images/home-img/larix-banner-mobile-01.jpg'
+              ? '/assets/images/home-img/shenghe-banner-mobile-01.jpg'
               : '/assets/images/home-img/home-banner-01.jpg'
           "
         />
@@ -14,16 +14,29 @@
         <img
           [src]="
             isMobile
-              ? '/assets/images/home-img/larix-banner-mobile-02.jpg'
+              ? '/assets/images/home-img/shenghe-banner-mobile-02.jpg'
               : '/assets/images/home-img/home-banner-02.jpg'
           "
         />
       </div>
       <div nz-carousel-content>
-        <img src="/assets/images/home-img/home-banner-03.jpg" />
+        <img 
+        [src]="
+          isMobile
+              ? '/assets/images/home-img/shenghe-banner-mobile-03.jpg'
+              : '/assets/images/home-img/home-banner-03.jpg'
+           "
+         />
       </div>
       <div nz-carousel-content>
-        <img src="/assets/images/home-img/home-banner-04.jpg" />
+        <img 
+        [src]="
+          isMobile
+              ? '/assets/images/home-img/shenghe-banner-mobile-02.jpg'
+              : '/assets/images/home-img/home-banner-04.jpg'
+           "
+        
+        />
       </div>
     </nz-carousel>
   </div>
