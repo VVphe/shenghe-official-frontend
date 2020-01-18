@@ -16,6 +16,7 @@ import { NzTabsModule } from "ng-zorro-antd/tabs";
 import { TranslateModule } from "@ngx-translate/core";
 import { PopContactComponent } from "./pop-contact/pop-contact.component";
 import { FormsModule } from "@angular/forms";
+import { SafeHtmlPipe } from "./safe-html.pipe";
 
 const SHARED_MODULES = [
   CommonModule,
@@ -35,8 +36,8 @@ const SHARED_MODULES = [
 ];
 
 @NgModule({
-  declarations: [PopContactComponent],
+  declarations: [PopContactComponent, SafeHtmlPipe],
   imports: [SHARED_MODULES],
-  exports: [SHARED_MODULES, PopContactComponent]
+  exports: [SHARED_MODULES, PopContactComponent, SafeHtmlPipe]
 })
 export class SharedModule {}

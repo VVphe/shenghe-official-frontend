@@ -2,7 +2,8 @@
   <div class="news-detail-wrapper">
     <div class="header">
       <span (click)="back()">
-        <i nz-icon nzType="left" nzTheme="outline"></i>{{ "return" | translate }}
+        <i nz-icon nzType="left" nzTheme="outline"></i
+        >{{ "return" | translate }}
       </span>
     </div>
     <div class="news-info">
@@ -11,7 +12,7 @@
         <p>{{ formatTimestamp(newsInfo?.createTime) }}</p>
       </div>
       <div class="content">
-        <div [innerHtml]="newsInfo?.content"></div>
+        <div [innerHtml]="newsInfo?.content | safeHtml"></div>
       </div>
     </div>
     <div class="related" *ngIf="relatedNews && relatedNews.length">
