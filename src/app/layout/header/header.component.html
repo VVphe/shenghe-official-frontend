@@ -138,16 +138,40 @@
         <nz-collapse *ngIf="menu.label == 'Products'">
           <nz-collapse-panel [nzHeader]="menu.label">
             <div
-              (click)="switchProduct('Wallpack'); showMenu = false"
+              (click)="switchProduct('LED FLood Light'); showMenu = false"
               class="sub-product-item"
             >
-              {{ "Wallpack" | translate }}
+              {{ "LED FLood Light" | translate }}
             </div>
             <div
-              (click)="switchProduct('Flood lighting'); showMenu = false"
+              (click)="switchProduct('Garden Light'); showMenu = false"
               class="sub-product-item"
             >
-              {{ "Flood lighting" | translate }}
+              {{ "Garden Light" | translate }}
+            </div>
+            <div
+              (click)="switchProduct('LED High Bay Light'); showMenu = false"
+              class="sub-product-item"
+            >
+              {{ "LED High Bay Light" | translate }}
+            </div>
+            <div
+              (click)="switchProduct('LED Flat Panel'); showMenu = false"
+              class="sub-product-item"
+            >
+              {{ "LED Flat Panel" | translate }}
+            </div>
+            <div
+              (click)="switchProduct('LED Ceiling Light'); showMenu = false"
+              class="sub-product-item"
+            >
+              {{ "LED Ceiling Light" | translate }}
+            </div>
+            <div
+              (click)="switchProduct('Wall Light'); showMenu = false"
+              class="sub-product-item"
+            >
+              {{ "Wall Light" | translate }}
             </div>
           </nz-collapse-panel>
         </nz-collapse>
