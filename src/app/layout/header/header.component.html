@@ -19,9 +19,9 @@
         <div class="hover-product">
           <div>
             <p>{{ "Outdoor" | translate }}</p>
-            <div (click)="switchProduct('LED FLood Light')">
+            <div (click)="switchProduct('Floodlight')">
               <img src="/assets/images/home-img/home-product-06.jpg" />
-              <p>{{ "LED FLood Light" | translate }}</p>
+              <p>{{ "Floodlight" | translate }}</p>
             </div>
             <div (click)="switchProduct('Garden Light')">
               <img src="/assets/images/home-img/home-product-02.png" />
@@ -30,17 +30,17 @@
           </div>
           <div>
             <p>{{ "Indoor" | translate }}</p>
-            <div (click)="switchProduct('LED High Bay Light')">
+            <div (click)="switchProduct('High-bay Light')">
               <img src="/assets/images/home-img/home-product-05.png" />
-              <p>{{ "LED High Bay Light" | translate }}</p>
+              <p>{{ "High-bay Light" | translate }}</p>
             </div>
-            <div (click)="switchProduct('LED Flat Panel')">
+            <div (click)="switchProduct('Flat Panel')">
               <img src="/assets/images/home-img/home-product-01.png" />
-              <p>{{ "LED Flat Panel" | translate }}</p>
+              <p>{{ "Flat Panel" | translate }}</p>
             </div>
-            <div (click)="switchProduct('LED Ceiling Light')">
+            <div (click)="switchProduct('Ceiling Light')">
               <img src="/assets/images/home-img/home-product-04.jpg" />
-              <p>{{ "LED Ceiling Light" | translate }}</p>
+              <p>{{ "Ceiling Light" | translate }}</p>
             </div>
             <div (click)="switchProduct('Wall Light')">
               <img src="/assets/images/home-img/home-product-03.png" />
@@ -138,10 +138,10 @@
         <nz-collapse *ngIf="menu.label == 'Products'">
           <nz-collapse-panel [nzHeader]="menu.label">
             <div
-              (click)="switchProduct('LED FLood Light'); showMenu = false"
+              (click)="switchProduct('Floodlight'); showMenu = false"
               class="sub-product-item"
             >
-              {{ "LED FLood Light" | translate }}
+              {{ "Floodlight" | translate }}
             </div>
             <div
               (click)="switchProduct('Garden Light'); showMenu = false"
@@ -150,22 +150,22 @@
               {{ "Garden Light" | translate }}
             </div>
             <div
-              (click)="switchProduct('LED High Bay Light'); showMenu = false"
+              (click)="switchProduct('High-bay Light'); showMenu = false"
               class="sub-product-item"
             >
-              {{ "LED High Bay Light" | translate }}
+              {{ "High-bay Light" | translate }}
             </div>
             <div
-              (click)="switchProduct('LED Flat Panel'); showMenu = false"
+              (click)="switchProduct('Flat Panel'); showMenu = false"
               class="sub-product-item"
             >
-              {{ "LED Flat Panel" | translate }}
+              {{ "Flat Panel" | translate }}
             </div>
             <div
-              (click)="switchProduct('LED Ceiling Light'); showMenu = false"
+              (click)="switchProduct('Ceiling Light'); showMenu = false"
               class="sub-product-item"
             >
-              {{ "LED Ceiling Light" | translate }}
+              {{ "Ceiling Light" | translate }}
             </div>
             <div
               (click)="switchProduct('Wall Light'); showMenu = false"
