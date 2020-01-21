@@ -1,9 +1,10 @@
 .carousel {
   width: 100%;
-  height: 100%;
   ::ng-deep {
-    .slick-list {
-      height: 600px !important;
+    .slick-list,
+    .slick-slide,
+    .slick-track {
+      height: fit-content !important;
     }
   }
   .wrap {
@@ -354,7 +355,6 @@
   }
 }
 
-
 .news-group {
   width: 960px;
   display: flex;
@@ -389,25 +389,10 @@
     width: 100%;
     padding: 0 16px;
   }
-  .carousel {
-    width: 100%;
-    height: 600px;
-    ::ng-deep {
-      .slick-list {
-        height: 600px !important;
-      }
-    }
-    img {
-      // width: 100%;
-      height: 600px;
-      margin: 0 auto;
-      background-size: cover;
-    }
-  }
   .home-text-info {
     width: 100%;
     padding: 0 16px;
-  } 
+  }
   .arrow-left {
     display: none !important;
   }
@@ -426,8 +411,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    overflow-y:auto;
-    
+    overflow-y: auto;
   }
   .home-product-item {
     text-align: center;
@@ -438,8 +422,8 @@
       img {
         width: 160px !important;
         height: 160px !important;
-        }
       }
+    }
     p {
       font-size: 14px !important;
     }
@@ -479,5 +463,4 @@
       }
     }
   }
-  
 }
