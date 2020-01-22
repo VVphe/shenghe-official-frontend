@@ -47,4 +47,9 @@ export class SliderComponent implements OnInit {
   handleValueChange(value: number[]) {
     this.value$.next(value);
   }
+
+  reset() {
+    this.value = [this.min, this.max];
+    this.value$.next([this.min, this.max]);
+  }
 }

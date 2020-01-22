@@ -11,11 +11,11 @@ export const productParams = {
   "Input Voltage": {
     count: 1
   },
-  Wattage: {
+  Power: {
     count: 1,
     filter: true
   },
-  "Lumen (±10%)": {
+  "Flux (±10%)": {
     count: 1,
     filter: true
   },
@@ -52,13 +52,7 @@ export const productParams = {
   "Finish Color": {
     count: 1
   },
-  "Motion Sensor Included": {
-    count: 1
-  },
   "Operating Temperature": {
-    count: 1
-  },
-  Environment: {
     count: 1
   },
   "Rated Lifespan": {

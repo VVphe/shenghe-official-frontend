@@ -1,4 +1,12 @@
-import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  Input,
+  ViewChild
+} from "@angular/core";
+import { SliderComponent } from "../slider/slider.component";
 
 @Component({
   selector: "app-param-filter",
@@ -12,12 +20,21 @@ export class ParamFilterComponent implements OnInit {
   @Input()
   tooltipStatus = "always";
 
+  @ViewChild("powerSlider", { static: false })
+  powerSlider: SliderComponent;
+  @ViewChild("fluxSlider", { static: false })
+  fluxSlider: SliderComponent;
+
   constructor() {}
 
   ngOnInit() {}
 
   handleValueChange(value: number[], type: string) {
-    console.log(value, type);
     this.valueChange.emit({ value, type });
+  }
+
+  reset() {
+    this.powerSlider.reset();
+    this.fluxSlider.reset();
   }
 }

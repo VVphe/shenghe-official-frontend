@@ -65,15 +65,15 @@ export class ProductDetailComponent implements OnInit {
       this.productInfo = res.data;
       for (let i = 0; i < this.languages.length; i++) {
         this.productInfo.params[this.languages[i].lang][
-          "Wattage"
+          "Power"
         ] = this.filterAssembly(
-          this.productInfo.params[this.languages[i].lang]["Wattage"],
+          this.productInfo.params[this.languages[i].lang]["Power"],
           "decode"
         );
         this.productInfo.params[this.languages[i].lang][
-          "Lumen (±10%)"
+          "Flux (±10%)"
         ] = this.filterAssembly(
-          this.productInfo.params[this.languages[i].lang]["Lumen (±10%)"],
+          this.productInfo.params[this.languages[i].lang]["Flux (±10%)"],
           "decode"
         );
       }

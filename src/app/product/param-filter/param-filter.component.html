@@ -1,7 +1,8 @@
 <div class="filter-wrapper">
   <div class="param-slider">
-    <p>{{ "Wattage" | translate }}</p>
+    <p>{{ "Power" | translate }}</p>
     <app-slider
+      #powerSlider
       [min]="0"
       [max]="300"
       [tooltipStatus]="tooltipStatus"
@@ -9,8 +10,9 @@
     ></app-slider>
   </div>
   <div class="param-slider">
-    <p>{{ "Lumen (±10%)" | translate }}</p>
+    <p>{{ "Flux (±10%)" | translate }}</p>
     <app-slider
+      #fluxSlider
       [min]="0"
       [max]="35000"
       [tooltipStatus]="tooltipStatus"
@@ -18,3 +20,4 @@
     ></app-slider>
   </div>
 </div>
+<span class="reset" (click)="reset()">{{ "Reset" | translate }}</span>
