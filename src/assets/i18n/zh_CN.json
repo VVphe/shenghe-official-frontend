@@ -17,8 +17,8 @@
   "Part Number": "灯具型号",
   "Portfolio": "产品类型",
   "Input Voltage": "输入电压",
-  "Wattage": "功率",
-  "Lumen (±10%)": "流明",
+  "WPower": "功率",
+  "Flux (±10%)": "流明",
   "Lamp's Lumen": "灯泡流明",
   "CCT": "色温",
   "CRI": "显色指数",
@@ -41,6 +41,7 @@
   "Product Length": "长",
   "Product Width": "宽",
   "Product Height": "高",
+  "IP": "防水等级",
 
   "Floodlight": "泛光灯",
   "Garden Light": "庭院灯",

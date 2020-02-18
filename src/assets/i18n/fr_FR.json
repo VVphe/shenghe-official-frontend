@@ -16,8 +16,8 @@
   "Part Number": "Numéro d'article",
   "Portfolio": "Portefeuille",
   "Input Voltage": "Tension d'entrée",
-  "Wattage": "Puissance",
-  "Lumen (±10%)": "Lumen (±10%)",
+  "Power": "Puissance",
+  "Flux (±10%)": "Flux(±10%)",
   "Lamp's Lumen": "Lumen de la lampe",
   "CCT": "CCT",
   "CRI": "CRI",
@@ -40,6 +40,7 @@
   "Product Length": "Longueur du produit",
   "Product Width": "Largeur du produit",
   "Product Height": "Hauteur du produit",
+  "IP": "IP",
 
   "Floodlight": "Projecteurs",
   "Garden Light": "Lampes de cour",

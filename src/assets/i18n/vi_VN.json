@@ -16,8 +16,8 @@
   "Part Number": "Một phần số",
   "Portfolio": "Danh mục đầu tư",
   "Input Voltage": "Điện áp đầu vào",
-  "Wattage": "Công suất",
-  "Lumen (±10%)": "Lumen (±10%)",
+  "Power": "Công suất",
+  "Flux (±10%)": "Flux (±10%)",
   "Lamp's Lumen": "Đèn Lumen",
   "CCT": "CCT",
   "CRI": "CRI",
@@ -40,6 +40,7 @@
   "Product Length": "Chiều dài sản phẩm",
   "Product Width": "Chiều rộng sản phẩm",
   "Product Height": "Chiều cao sản phẩm",
+  "IP": "IP",
 
   "Floodlight": "Floodlights",
   "Garden Light": "Đèn sân",
