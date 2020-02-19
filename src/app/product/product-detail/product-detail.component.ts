@@ -76,6 +76,21 @@ export class ProductDetailComponent implements OnInit {
           this.productInfo.params[this.languages[i].lang]["Flux (±10%)"],
           "decode"
         );
+
+        // 适配参数修改
+        this.paramsModifyAdapter(
+          this.productInfo.params[this.languages[i].lang],
+          "new",
+          "IP",
+          1
+        );
+        this.paramsModifyAdapter(
+          this.productInfo.params[this.languages[i].lang],
+          "replace",
+          "CRI",
+          1,
+          "Ra"
+        );
       }
     });
   }
@@ -117,5 +132,19 @@ export class ProductDetailComponent implements OnInit {
 
   back() {
     this.location.back();
+  }
+
+  paramsModifyAdapter(
+    obj: any,
+    type: "new" | "replace",
+    target: string,
+    count: number,
+    source?: string
+  ) {
+    if (type === "new" && !obj[target]) {
+      obj[target] = Array(count).fill("");
+    } else if (type === "replace") {
+      obj[target] = obj[source];
+    }
   }
 }
