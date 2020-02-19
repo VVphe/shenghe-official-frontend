@@ -22,7 +22,7 @@ export const productParams = {
   CCT: {
     count: 1
   },
-  Ra: {
+  CRI: {
     count: 1
   },
   "Beam Angle": {
@@ -53,6 +53,9 @@ export const productParams = {
     count: 1
   },
   "Operating Temperature": {
+    count: 1
+  },
+  IP: {
     count: 1
   },
   "Rated Lifespan": {
