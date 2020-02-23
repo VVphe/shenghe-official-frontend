@@ -16,6 +16,9 @@ export class HomeComponent implements OnInit {
   currentLang = "English";
   newsList = [];
 
+  bannerIdx = ["01", "02", "03", "04"];
+  size;
+
   get isMobile() {
     return this.deviceService.isMobile;
   }
@@ -60,6 +63,8 @@ export class HomeComponent implements OnInit {
     };
 
     this.languageService.subscribe(langSwitchCb);
+
+    this.size = this.getWindowWidth();
   }
 
   toProduct(category) {
@@ -108,5 +113,22 @@ export class HomeComponent implements OnInit {
 
   toNews() {
     this.router.navigate(["news"]);
+  }
+
+  getWindowWidth(): number {
+    let width = 0;
+    if (window.innerWidth) {
+      width = window.innerWidth;
+    } else if (document.body && document.body.clientWidth) {
+      width = document.body.clientWidth;
+    }
+    if (width >= 1280 && width < 1440) {
+      return 1280;
+    } else if (width >= 1440 && width < 1920) {
+      return 1440;
+    } else if (width >= 1920) {
+      return 1920;
+    }
+    return 1280;
   }
 }
