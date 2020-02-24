@@ -144,7 +144,9 @@ export class ProductDetailComponent implements OnInit {
     if (type === "new" && !obj[target]) {
       obj[target] = Array(count).fill("");
     } else if (type === "replace") {
-      obj[target] = obj[source];
+      if (obj[source]) {
+        obj[target] = obj[source];
+      }
     }
   }
 }
