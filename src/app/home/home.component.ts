@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { DeviceService } from "../shared/device.service";
 import { NewsService } from "../news/news.service";
 import { LanguageService } from "../shared/language.service";
+import Swiper from "swiper";
 
 @Component({
   selector: "app-home",
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   newsList = [];
 
   bannerIdx = ["01", "02", "03", "04"];
+  mobileBannerIdx = ["01", "02", "03"];
   size;
 
   get isMobile() {
@@ -65,6 +67,9 @@ export class HomeComponent implements OnInit {
     this.languageService.subscribe(langSwitchCb);
 
     this.size = this.getWindowWidth();
+    setTimeout(() => {
+      this.swiperInit();
+    }, 0);
   }
 
   toProduct(category) {
@@ -130,5 +135,26 @@ export class HomeComponent implements OnInit {
       return 1920;
     }
     return 1280;
+  }
+
+  swiperInit() {
+    // tslint:disable-next-line: no-unused-expression
+    new Swiper(".swiper-container", {
+      direction: "horizontal",
+      loop: true,
+      speed: 1000,
+      grabCursor: true,
+      autoplay: {
+        delay: 2000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false
+      },
+      observer: true,
+      observeParents: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      }
+    });
   }
 }

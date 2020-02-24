@@ -1,171 +1,154 @@
 <div class="home-wrapper">
-  <div class="carousel">
-    <nz-carousel nzAutoPlay>
-      <div nz-carousel-content *ngFor="let idx of bannerIdx">
-        <ng-container *ngIf="isMobile">
-          <img
-            src="/assets/images/home-img/shenghe-banner-mobile-{{ idx }}.jpg"
-          />
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <ng-container *ngIf="!isMobile">
+        <ng-container *ngFor="let idx of bannerIdx">
+          <div class="swiper-slide">
+            <ng-container>
+              <img
+                style="width: 100%;"
+                src="/assets/images/home-img/home-banner-{{ idx }}.jpg"
+              />
+            </ng-container>
+          </div>
         </ng-container>
-        <ng-container *ngIf="!isMobile">
-          <img src="/assets/images/home-img/{{ size }}-{{ idx }}.jpg" />
+      </ng-container>
+      <ng-container *ngIf="isMobile">
+        <ng-container *ngFor="let idx of mobileBannerIdx">
+          <div class="swiper-slide">
+            <ng-container>
+              <img
+                style="width: 100%;"
+                src="/assets/images/home-img/shenghe-banner-mobile-{{
+                  idx
+                }}.jpg"
+              />
+            </ng-container>
+          </div>
         </ng-container>
-      </div>
-      <!-- <div nz-carousel-content>
-        <img
-          [src]="
-            isMobile
-              ? '/assets/images/home-img/shenghe-banner-mobile-01.jpg'
-              : '/assets/images/home-img/home-banner-01.jpg'
-          "
-        />
-      </div>
-      <div nz-carousel-content>
-        <img
-          [src]="
-            isMobile
-              ? '/assets/images/home-img/shenghe-banner-mobile-02.jpg'
-              : '/assets/images/home-img/home-banner-02.jpg'
-          "
-        />
-      </div>
-      <div nz-carousel-content>
-        <img
-          [src]="
-            isMobile
-              ? '/assets/images/home-img/shenghe-banner-mobile-03.jpg'
-              : '/assets/images/home-img/home-banner-03.jpg'
-          "
-        />
-      </div>
-      <div nz-carousel-content>
-        <img
-          [src]="
-            isMobile
-              ? '/assets/images/home-img/shenghe-banner-mobile-02.jpg'
-              : '/assets/images/home-img/home-banner-04.jpg'
-          "
-        />
-      </div> -->
-    </nz-carousel>
+      </ng-container>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
   </div>
+  <div>
+    <div class="home-text-info">
+      <p>{{ "About us" | translate }}</p>
+      <p>
+        {{
+          "We obtained SA8000 certification with strong technical development ability and rich development experience, advanced production and testing equipment and quality inspection assurance system. We always adhere to the market orientation of ‘customer first’ and the specific practice of ‘people-oriented’. We have provided OEM and ODM services for many premium lighting brands (e.g. RAB, iGuzzini) in European and American markets by growing together with customers."
+            | translate
+        }}
+      </p>
+      <img src="/assets/images/home-img/home-aboutus-pic.png" />
+    </div>
 
-  <div class="home-text-info">
-    <p>{{ "About us" | translate }}</p>
-    <p>
-      {{
-        "We obtained SA8000 certification with strong technical development ability and rich development experience, advanced production and testing equipment and quality inspection assurance system. We always adhere to the market orientation of ‘customer first’ and the specific practice of ‘people-oriented’. We have provided OEM and ODM services for many premium lighting brands (e.g. RAB, iGuzzini) in European and American markets by growing together with customers."
-          | translate
-      }}
-    </p>
-    <img src="/assets/images/home-img/home-aboutus-pic.png" />
-  </div>
-
-  <div class="home-product-wrapper">
-    <p>{{ "Products" | translate }}</p>
-    <div class="product-container">
-      <a class="arrow-left" (click)="pre()">
-        <img src="/assets/images/home-img/home-icon-pre.png" />
-      </a>
-      <div>
-        <div class="home-product-container">
-          <div class="slider left-{{ productIndex }}">
-            <div
-              class="home-product-item"
-              (click)="switchProduct('Flat Panel')"
-            >
-              <div class="product-pic">
-                <img src="/assets/images/home-img/Flat Panel.png" />
+    <div class="home-product-wrapper">
+      <p>{{ "Products" | translate }}</p>
+      <div class="product-container">
+        <a class="arrow-left" (click)="pre()">
+          <img src="/assets/images/home-img/home-icon-pre.png" />
+        </a>
+        <div>
+          <div class="home-product-container">
+            <div class="slider left-{{ productIndex }}">
+              <div
+                class="home-product-item"
+                (click)="switchProduct('Flat Panel')"
+              >
+                <div class="product-pic">
+                  <img src="/assets/images/home-img/Flat Panel.png" />
+                </div>
+                <p>{{ "Flat Panel" | translate }}</p>
               </div>
-              <p>{{ "Flat Panel" | translate }}</p>
-            </div>
-            <div
-              class="home-product-item"
-              (click)="switchProduct('Garden Light')"
-            >
-              <div class="product-pic">
-                <img src="/assets/images/home-img/Garden Light.png" />
+              <div
+                class="home-product-item"
+                (click)="switchProduct('Garden Light')"
+              >
+                <div class="product-pic">
+                  <img src="/assets/images/home-img/Garden Light.png" />
+                </div>
+                <p>{{ "Garden Light" | translate }}</p>
               </div>
-              <p>{{ "Garden Light" | translate }}</p>
-            </div>
-            <div
-              class="home-product-item"
-              (click)="switchProduct('Wall Light')"
-            >
-              <div class="product-pic">
-                <img src="/assets/images/home-img/Wall Light.png" />
+              <div
+                class="home-product-item"
+                (click)="switchProduct('Wall Light')"
+              >
+                <div class="product-pic">
+                  <img src="/assets/images/home-img/Wall Light.png" />
+                </div>
+                <p>{{ "Wall Light" | translate }}</p>
               </div>
-              <p>{{ "Wall Light" | translate }}</p>
-            </div>
-            <div
-              class="home-product-item"
-              (click)="switchProduct('High-bay Light')"
-            >
-              <div class="product-pic">
-                <img src="/assets/images/home-img/High-bay Light.png" />
+              <div
+                class="home-product-item"
+                (click)="switchProduct('High-bay Light')"
+              >
+                <div class="product-pic">
+                  <img src="/assets/images/home-img/High-bay Light.png" />
+                </div>
+                <p>{{ "High-bay Light" | translate }}</p>
               </div>
-              <p>{{ "High-bay Light" | translate }}</p>
-            </div>
-            <div
-              class="home-product-item"
-              (click)="switchProduct('Floodlight')"
-            >
-              <div class="product-pic">
-                <img src="/assets/images/home-img/Floodlight.jpg" />
+              <div
+                class="home-product-item"
+                (click)="switchProduct('Floodlight')"
+              >
+                <div class="product-pic">
+                  <img src="/assets/images/home-img/Floodlight.jpg" />
+                </div>
+                <p>{{ "Floodlight" | translate }}</p>
               </div>
-              <p>{{ "Floodlight" | translate }}</p>
-            </div>
-            <div
-              class="home-product-item"
-              (click)="switchProduct('Ceiling Light')"
-            >
-              <div class="product-pic">
-                <img src="/assets/images/home-img/Ceiling Light.jpg" />
+              <div
+                class="home-product-item"
+                (click)="switchProduct('Ceiling Light')"
+              >
+                <div class="product-pic">
+                  <img src="/assets/images/home-img/Ceiling Light.jpg" />
+                </div>
+                <p>{{ "Ceiling Light" | translate }}</p>
               </div>
-              <p>{{ "Ceiling Light" | translate }}</p>
             </div>
           </div>
         </div>
+
+        <a class="arrow-right" (click)="next()">
+          <img src="/assets/images/home-img/home-icon-next.png" />
+        </a>
       </div>
-
-      <a class="arrow-right" (click)="next()">
-        <img src="/assets/images/home-img/home-icon-next.png" />
-      </a>
+      <a (click)="toProducts()">{{ "All Products >" | translate }} </a>
     </div>
-    <a (click)="toProducts()">{{ "All Products >" | translate }} </a>
-  </div>
 
-  <div class="home-main-content">
-    <div class="home-news-info">
-      <p class="home-title-news">{{ "News" | translate }}</p>
-      <div class="news-group">
-        <div
-          class="single-news-item"
-          *ngFor="let news of newsList"
-          (click)="toNewsDetail(news.id)"
-        >
-          <a class="news-item-pic">
-            <img [src]="news.thumbnailUrl" />
-          </a>
-          <p>{{ news.title }}</p>
-          <p>{{ formatTimestamp(news.createTime) }}</p>
+    <div class="home-main-content">
+      <div class="home-news-info">
+        <p class="home-title-news">{{ "News" | translate }}</p>
+        <div class="news-group">
+          <div
+            class="single-news-item"
+            *ngFor="let news of newsList"
+            (click)="toNewsDetail(news.id)"
+          >
+            <a class="news-item-pic">
+              <img [src]="news.thumbnailUrl" />
+            </a>
+            <p>{{ news.title }}</p>
+            <p>{{ formatTimestamp(news.createTime) }}</p>
+          </div>
         </div>
+        <a class="more-news" (click)="toNews()"
+          >{{ "More News >" | translate }}
+        </a>
       </div>
-      <a class="more-news" (click)="toNews()"
-        >{{ "More News >" | translate }}
-      </a>
     </div>
   </div>
-</div>
 
-<nz-modal
-  [(nzVisible)]="isVisible"
-  [nzContent]="modalContent"
-  (nzOnCancel)="isVisible = false"
-  nzClassName="contact-modal"
-  [nzFooter]="null"
->
-  <ng-template #modalContent>
-    <app-pop-contact></app-pop-contact>
-  </ng-template>
-</nz-modal>
+  <nz-modal
+    [(nzVisible)]="isVisible"
+    [nzContent]="modalContent"
+    (nzOnCancel)="isVisible = false"
+    nzClassName="contact-modal"
+    [nzFooter]="null"
+  >
+    <ng-template #modalContent>
+      <app-pop-contact></app-pop-contact>
+    </ng-template>
+  </nz-modal>
+</div>
