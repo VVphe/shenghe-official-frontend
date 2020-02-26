@@ -142,10 +142,10 @@ export class HomeComponent implements OnInit {
     new Swiper(".swiper-container", {
       direction: "horizontal",
       loop: true,
-      speed: 1000,
+      speed: 1250,
       grabCursor: true,
       autoplay: {
-        delay: 2000,
+        delay: 4000,
         stopOnLastSlide: false,
         disableOnInteraction: false
       },
