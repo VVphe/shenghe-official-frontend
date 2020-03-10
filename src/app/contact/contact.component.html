@@ -5,22 +5,25 @@
       <div class="contact-info-details">
         <div class="title-Tel">
           <p>
-            <span dir='ltr'>{{'Tel:' | translate}}</span>&ensp;+86-0574-6578-2991 <br />
-            ({{'Monday - Friday 09:00-18:00' | translate}})
+            <span dir='ltr'>{{'Tel:' | translate}}</span>&ensp;+86-574-6578-2991 <br />
+            <!-- ({{'Monday - Friday 09:00-18:00' | translate}}) -->
           </p>
         </div>
         <div class="title-Fax">
-          <p><span dir='ltr'>{{'Fax:' | translate}}</span>&ensp;+86-0574-6578-3777</p>
+          <p><span dir='ltr'>{{'Fax:' | translate}}</span>&ensp;+86-574-6578-3777</p>
         </div>
         <div class="title-Email">
-          <p><span dir='ltr'>{{'Email:' | translate}}</span>&ensp;sales@shenghe.com</p>
+          <a href=mailto:sales@shenghe.com>
+            <p><span dir='ltr'>{{'Email:' | translate}}</span>&ensp;sales@shenghe.com</p>
+          </a>
         </div>
         
         <div class="title-Address">
+          <a href="https://goo.gl/maps/DGZHANmNa4ZbgQaZ6" target="_blank">
           <p>
-            <span dir='ltr'>{{'Address:' | translate}}</span>&ensp;{{'No.311 Penglai Road, Economic Development Zone, Xiangshan Town, Ningbo City, Zhejiang Province, China' | translate}}
-
+            <span dir='ltr'>{{'Address:' | translate}}</span>&ensp;{{'No.311 Penglai Road, Economic Development Zone, Xiangshan Town, Ningbo City, Zhejiang Province, China 315700' | translate}}
           </p>
+        </a>
         </div>
       </div>
       <div class="contact-map">
@@ -31,7 +34,7 @@
     </div>
     <div class="contact-form-content">
       <p class="fisrt-text-info">
-        {{'Thank you for your attention. If you have any comments, please feel free to contact us.' | translate}}
+        {{'If you have any comments, please feel free to contact us.' | translate}}
       </p>
       <div class="contact-input-group">
         <form class="contact-form-inputs">
@@ -63,7 +66,7 @@
               />
             </div>
             <div class="input-group-item">
-              <p>{{'Phone *' | translate}}</p>
+              <p>{{'Phone' | translate}}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.telephone"
@@ -100,7 +103,7 @@
             </textarea>
           </div>
           <div class="contact-submit-button">
-            <button type="button" (click)="contact()">{{'Contact us' | translate}}</button>
+            <button type="button" (click)="contact()">{{'Send' | translate}}</button>
           </div>
         </form>
       </div>

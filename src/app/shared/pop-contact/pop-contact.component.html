@@ -2,7 +2,7 @@
   <div class="contact-form-content">
     <p>
       {{
-        "Thank you for your attention. If you have any comments, please feel free to contact us."
+        "If you have any comments, please feel free to contact us."
           | translate
       }}
     </p>
@@ -36,7 +36,7 @@
             />
           </div>
           <div class="input-group-item">
-            <p>{{ "Phone *" | translate }}</p>
+            <p>{{ "Phone" | translate }}</p>
             <input
               type="text"
               [(ngModel)]="contactInfo.telephone"
@@ -74,7 +74,7 @@
         </div>
         <div class="contact-submit-button">
           <button type="button" (click)="contact()">
-            {{ "Contact us" | translate }}
+            {{ "Send" | translate }}
           </button>
         </div>
       </form>

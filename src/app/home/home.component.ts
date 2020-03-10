@@ -104,13 +104,13 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  pre() {
-    if (this.productIndex > 0) this.productIndex--;
-  }
+  // pre() {
+  //   if (this.productIndex > 0) this.productIndex--;
+  // }
 
-  next() {
-    if (this.productIndex < 2) this.productIndex++;
-  }
+  // next() {
+  //   if (this.productIndex < 2) this.productIndex++;
+  // }
 
   toProducts() {
     this.router.navigate(["/products"]);

@@ -36,8 +36,7 @@
       <p>{{ "About us" | translate }}</p>
       <p>
         {{
-          "We obtained SA8000 certification with strong technical development ability and rich development experience, advanced production and testing equipment and quality inspection assurance system. We always adhere to the market orientation of ‘customer first’ and the specific practice of ‘people-oriented’. We have provided OEM and ODM services for many premium lighting brands (e.g. RAB, iGuzzini) in European and American markets by growing together with customers."
-            | translate
+          "Strong technical development ability and rich development experience, advanced production and quality assurance system and testing equipment enabled us to be the leading enterprise in Zhejiang. We have provided OEM and ODM services for many premium lighting brands (e.g. iGuzzini) in European and American markets by growing together with customers.We always adhere to the specific practice of \"put people first\" and the market orientation of \"customer first\", which helped us to obtain SA8000 certification with strong social responsibilities." | translate
         }}
       </p>
       <img src="/assets/images/home-img/home-aboutus-pic.png" />
@@ -46,12 +45,12 @@
     <div class="home-product-wrapper">
       <p>{{ "Products" | translate }}</p>
       <div class="product-container">
-        <a class="arrow-left" (click)="pre()">
+        <!-- <a class="arrow-left" (click)="pre()">
           <img src="/assets/images/home-img/home-icon-pre.png" />
-        </a>
+        </a> -->
         <div>
           <div class="home-product-container">
-            <div class="slider left-{{ productIndex }}">
+            <!-- <div class="slider left-{{ productIndex }}"> -->
               <div
                 class="home-product-item"
                 (click)="switchProduct('Flat Panel')"
@@ -61,7 +60,7 @@
                 </div>
                 <p>{{ "Flat Panel" | translate }}</p>
               </div>
-              <div
+              <!-- <div
                 class="home-product-item"
                 (click)="switchProduct('Garden Light')"
               >
@@ -69,7 +68,7 @@
                   <img src="/assets/images/home-img/Garden Light.png" />
                 </div>
                 <p>{{ "Garden Light" | translate }}</p>
-              </div>
+              </div> -->
               <div
                 class="home-product-item"
                 (click)="switchProduct('Wall Light')"
@@ -86,7 +85,7 @@
                 <div class="product-pic">
                   <img src="/assets/images/home-img/High-bay Light.png" />
                 </div>
-                <p>{{ "High-bay Light" | translate }}</p>
+                <p>{{ "High Bay Light" | translate }}</p>
               </div>
               <div
                 class="home-product-item"
@@ -106,13 +105,13 @@
                 </div>
                 <p>{{ "Ceiling Light" | translate }}</p>
               </div>
-            </div>
+            <!-- </div> -->
           </div>
         </div>
 
-        <a class="arrow-right" (click)="next()">
+        <!-- <a class="arrow-right" (click)="next()">
           <img src="/assets/images/home-img/home-icon-next.png" />
-        </a>
+        </a> -->
       </div>
       <a (click)="toProducts()">{{ "All Products >" | translate }} </a>
     </div>
