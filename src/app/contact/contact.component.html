@@ -1,46 +1,60 @@
 <div class="contact-wrapper">
-  <p class="contact-title-top">{{'Contact us' | translate}}</p>
+  <p class="contact-title-top">{{ "Contact us" | translate }}</p>
   <div class="contact-content">
     <div class="contact-info-content">
       <div class="contact-info-details">
         <div class="title-Tel">
           <p>
-            <span dir='ltr'>{{'Tel:' | translate}}</span>&ensp;+86-574-6578-2991 <br />
+            <span dir="ltr">{{ "Tel:" | translate }}</span
+            >&ensp;+86-574-6578-2991 <br />
             <!-- ({{'Monday - Friday 09:00-18:00' | translate}}) -->
           </p>
         </div>
         <div class="title-Fax">
-          <p><span dir='ltr'>{{'Fax:' | translate}}</span>&ensp;+86-574-6578-3777</p>
+          <p>
+            <span dir="ltr">{{ "Fax:" | translate }}</span
+            >&ensp;+86-574-6578-3777
+          </p>
         </div>
         <div class="title-Email">
-          <a href=mailto:sales@shenghe.com>
-            <p><span dir='ltr'>{{'Email:' | translate}}</span>&ensp;sales@shenghe.com</p>
+          <a href="mailto:sales@shenghe.com">
+            <p>
+              <span dir="ltr">{{ "Email:" | translate }}</span
+              >&ensp;sales@shenghe.com
+            </p>
           </a>
         </div>
-        
+
         <div class="title-Address">
           <a href="https://goo.gl/maps/DGZHANmNa4ZbgQaZ6" target="_blank">
-          <p>
-            <span dir='ltr'>{{'Address:' | translate}}</span>&ensp;{{'No.311 Penglai Road, Economic Development Zone, Xiangshan Town, Ningbo City, Zhejiang Province, China 315700' | translate}}
-          </p>
-        </a>
+            <p>
+              <span dir="ltr">{{ "Address:" | translate }}</span
+              >&ensp;{{
+                "No.311 Penglai Road, Economic Development Zone, Xiangshan Town, Ningbo City, Zhejiang Province, China 315700"
+                  | translate
+              }}
+            </p>
+          </a>
         </div>
       </div>
       <div class="contact-map">
         <a href="https://goo.gl/maps/DGZHANmNa4ZbgQaZ6" target="_blank">
-          <img src="/assets/images/contact-img/Google-map-site.png"/>
+          <img src="/assets/images/contact-img/Google-map-site.png" />
         </a>
       </div>
     </div>
     <div class="contact-form-content">
       <p class="fisrt-text-info">
-        {{'If you have any comments, please feel free to contact us.' | translate}}
+        {{
+          "If you have any comments, please feel free to contact us."
+            | translate
+        }}
       </p>
       <div class="contact-input-group">
         <form class="contact-form-inputs">
           <div class="row-group">
             <div class="input-group-item">
-              <p>{{'First Name *' | translate}}</p>
+              <p>{{ "First Name *" | translate }}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.firstName"
@@ -48,7 +62,7 @@
               />
             </div>
             <div class="input-group-item">
-              <p>{{'Last Name *' | translate}}</p>
+              <p>{{ "Last Name *" | translate }}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.lastName"
@@ -58,15 +72,15 @@
           </div>
           <div class="row-group">
             <div class="input-group-item">
-              <p>{{'E-mail *' | translate}}</p>
+              <p>{{ "E-mail *" | translate }}</p>
               <input
-                type="text"
+                type="email"
                 [(ngModel)]="contactInfo.email"
                 [ngModelOptions]="{ standalone: true }"
               />
             </div>
             <div class="input-group-item">
-              <p>{{'Phone' | translate}}</p>
+              <p>{{ "Phone" | translate }}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.telephone"
@@ -76,7 +90,7 @@
           </div>
           <div class="row-group">
             <div class="input-group-item">
-              <p>{{'Company' | translate}}</p>
+              <p>{{ "Company" | translate }}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.company"
@@ -84,7 +98,7 @@
               />
             </div>
             <div class="input-group-item">
-              <p>{{'Position' | translate}}</p>
+              <p>{{ "Position" | translate }}</p>
               <input
                 type="text"
                 [(ngModel)]="contactInfo.position"
@@ -93,7 +107,7 @@
             </div>
           </div>
           <div class="input-group-item">
-            <p>{{'Comments *' | translate}}</p>
+            <p>{{ "Comments *" | translate }}</p>
             <textarea
               rows="10"
               cols="30"
@@ -103,7 +117,9 @@
             </textarea>
           </div>
           <div class="contact-submit-button">
-            <button type="button" (click)="contact()">{{'Send' | translate}}</button>
+            <button type="button" (click)="contact()">
+              {{ "Send" | translate }}
+            </button>
           </div>
         </form>
       </div>

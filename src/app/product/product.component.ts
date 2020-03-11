@@ -21,7 +21,7 @@ export class ProductComponent implements OnInit {
   initSelected = "all";
 
   pageIndex = 1;
-  pageSize = 20;
+  pageSize = 10000;
 
   total = 0;
   pageTotal = 0;

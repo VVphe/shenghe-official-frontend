@@ -52,4 +52,12 @@ export class SliderComponent implements OnInit {
     this.value = [this.min, this.max];
     this.value$.next([this.min, this.max]);
   }
+
+  formatter(value: number) {
+    return value.toLocaleString();
+  }
+
+  localeStr(value: number) {
+    return value.toLocaleString();
+  }
 }

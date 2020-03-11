@@ -22,7 +22,7 @@ export class ContactComponent implements OnInit {
     firstName: "First Name",
     lastName: "Last Name",
     email: "E-mail address",
-    telephone: "Telephone number",
+    // telephone: "Telephone number",
     comments: "Comments"
   };
 

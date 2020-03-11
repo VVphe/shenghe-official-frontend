@@ -3,6 +3,7 @@
     [nzMin]="min"
     [nzMax]="max"
     nzRange
+    [nzTipFormatter]="formatter"
     [(ngModel)]="value"
     [nzTooltipVisible]="tooltipStatus"
     nzTooltipPlacement="top"
@@ -15,8 +16,8 @@
     ></span>
   </div>
   <div class="mark-number">
-    <span class="start">{{ min }}</span>
-    <span class="median">{{ median(min, max) }}</span>
-    <span class="end">{{ max }}</span>
+    <span class="start">{{ localeStr(min) }}</span>
+    <span class="median">{{ localeStr(median(min, max)) }}</span>
+    <span class="end">{{ localeStr(max) }}</span>
   </div>
 </div>
