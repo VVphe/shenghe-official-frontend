@@ -23,9 +23,13 @@ export class PopContactComponent implements OnInit {
     firstName: "First Name",
     lastName: "Last Name",
     email: "E-mail address",
-    telephone: "Telephone number",
+    // telephone: "Telephone number",
     comments: "Comments"
   };
+
+  get emailErr() {
+    return this.contactInfo.email && !this.validEmail(this.contactInfo.email);
+  }
 
   constructor(
     private msg: NzMessageService,
@@ -43,8 +47,19 @@ export class PopContactComponent implements OnInit {
       }
     }
 
+    if (!this.emailErr) {
+      return;
+    }
+
     this.contactService.submitContact(this.contactInfo).subscribe(_ => {
       this.msg.success("Thank you");
     });
+  }
+
+  validEmail(email) {
+    const reg = new RegExp(
+      "^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"
+    );
+    return reg.test(email);
   }
 }

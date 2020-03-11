@@ -71,7 +71,7 @@
             </div>
           </div>
           <div class="row-group">
-            <div class="input-group-item">
+            <div class="input-group-item {{ emailErr ? 'error' : '' }}">
               <p>{{ "E-mail *" | translate }}</p>
               <input
                 type="email"

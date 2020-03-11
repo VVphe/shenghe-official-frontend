@@ -35,10 +35,13 @@
     text-indent: 8px;
   }
   input:hover {
-    border: 2px solid #EBEDF0;
+    border: 2px solid #ebedf0;
   }
   input:focus {
-    border: 1px solid #8C9098;
+    border: 1px solid #8c9098;
+  }
+  &.error input {
+    border-color: red !important;
   }
 
   textarea {
@@ -50,10 +53,10 @@
     padding: 0px !important;
   }
   textarea:hover {
-    border: 2px solid #EBEDF0;
+    border: 2px solid #ebedf0;
   }
   textarea:focus {
-    border: 1px solid #8C9098;
+    border: 1px solid #8c9098;
   }
 
   p {
@@ -93,7 +96,7 @@
   width: 160px;
   height: 40px;
   color: #ffffff;
-  background-color: #8C9098;
+  background-color: #8c9098;
   border: 0px !important;
   border-radius: 0px;
   font-size: 14px;
@@ -102,7 +105,6 @@
 .contact-submit-button button:hover {
   background-color: #506d2d;
 }
-
 
 @media (max-width: 767.98px) {
   .pop-contact {
@@ -130,6 +132,9 @@
     }
     textarea {
       width: 100%;
+    }
+    &.error input {
+      border-color: red !important;
     }
   }
 }

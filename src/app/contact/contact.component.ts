@@ -26,6 +26,10 @@ export class ContactComponent implements OnInit {
     comments: "Comments"
   };
 
+  get emailErr() {
+    return this.contactInfo.email && !this.validEmail(this.contactInfo.email);
+  }
+
   constructor(
     private contactService: ContactService,
     private msg: NzMessageService
@@ -41,8 +45,19 @@ export class ContactComponent implements OnInit {
       }
     }
 
+    if (this.emailErr) {
+      return;
+    }
+
     this.contactService.submitContact(this.contactInfo).subscribe(_ => {
       this.msg.success("Thank you");
     });
+  }
+
+  validEmail(email) {
+    const reg = new RegExp(
+      "^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"
+    );
+    return reg.test(email);
   }
 }
