@@ -48,7 +48,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.menus = MENUS;
-    this.language = this.languages[0];
+    // this.language = this.languages[0];
+    this.language = this.languages[1];
+    this.switchLanguage(this.language);
     console.log(this.activatedRoute);
     this.activatedRoute.queryParams.subscribe(params => {
       // if (params["query"]) {
