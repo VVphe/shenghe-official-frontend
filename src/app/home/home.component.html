@@ -105,6 +105,51 @@
                 </div>
                 <p>{{ "Ceiling Light" | translate }}</p>
               </div>
+              <div
+                class="home-product-item"
+                (click)="switchProduct('Street Light')"
+              >
+                <div class="product-pic">
+                  <img src="/assets/images/home-img/Street Light.png" />
+                </div>
+                <p>{{ "Street Light" | translate }}</p>
+              </div>
+              <div
+                class="home-product-item"
+                (click)="switchProduct('Tunnel Light')"
+              >
+                <div class="product-pic">
+                  <img src="/assets/images/home-img/Tunnel Light.png" />
+                </div>
+                <p>{{ "Tunnel Light" | translate }}</p>
+              </div>
+              <div
+                class="home-product-item-empty" style="visibility: hidden"
+                (click)="switchProduct('Ceiling Light')"
+              >
+                <div class="product-pic">
+                  <img src="" />
+                </div>
+                <p></p>
+              </div>
+              <div
+                class="home-product-item-empty " style="visibility: hidden"
+                (click)="switchProduct('Ceiling Light')"
+              >
+                <div class="product-pic">
+                  <img src="" />
+                </div>
+                <p></p>
+              </div>
+              <div
+                class="home-product-item-empty " style="visibility: hidden"
+                (click)="switchProduct('Ceiling Light')"
+              >
+                <div class="product-pic">
+                  <img src="" />
+                </div>
+                <p></p>
+              </div>
             <!-- </div> -->
           </div>
         </div>
